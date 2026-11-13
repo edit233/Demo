@@ -1,0 +1,20 @@
+# 运行期依赖（与 pyproject.toml 保持一致）
+# 安装：pip install -r requirements.txt
+
+# --- Web 框架 ---
+fastapi>=0.162.5
+uvicorn[standard]>=0.54.0
+python-multipart>=0.0.20
+
+# --- PDF 解析 / 页面渲染 ---
+pymupdf>=1.24.3
+
+# --- PPTX 生成 ---
+python-pptx>=1.0.2
+
+# --- 图像处理 ---
+pillow>=11.0.0
+numpy>=2.0.0
+
+# --- OCR（图片型 PDF 的文字还原；PP-OCRv4 模型随包分发，可离线运行）---
+rapidocr-onnxruntime>=1.4.0

@@ -1,0 +1,32 @@
+services:
+  pdf2pptx:
+    build: .
+    image: pdf2pptx-service:1.0.0
+    container_name: pdf2pptx-service
+    ports:
+      - "8000:8000"
+    environment:
+      PDF2PPTX_MAX_UPLOAD_MB: "100"
+      PDF2PPTX_MAX_PAGES: "300"
+      PDF2PPTX_RETENTION_HOURS: "6"
+      PDF2PPTX_RENDER_SCALE: "2.0"
+      PDF2PPTX_KEEP_ART_LAYER: "1"
+      PDF2PPTX_DETECT_TABLES: "1"
+      PDF2PPTX_ENABLE_OCR: "1"
+      PDF2PPTX_OCR_MIN_CONFIDENCE: "0.5"
+      PDF2PPTX_OCR_ERASE_TEXT: "1"
+      PDF2PPTX_ALLOWED_ORIGINS: "*"
+    volumes:
+      - ./data/uploads:/data/uploads
+      - ./data/outputs:/data/outputs
+    restart: unless-stopped
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - import urllib.request;urllib.request.urlopen('http://127.0.0.1:8000/api/health',timeout=4)
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s

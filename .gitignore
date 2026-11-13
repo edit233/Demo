@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# 运行期数据（上传文件、临时产物）
+uploads/
+data/
+*.log
+
+# 转换输出中的运行期目录（调试目录 _* / 32 位十六进制任务目录）
+# 正式交付物（outputs/测试1 等中文命名目录）不受影响
+outputs/_*/
+outputs/[0-9a-f]*/
+
+# 工具缓存
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# IDE
+.idea/
+.vscode/

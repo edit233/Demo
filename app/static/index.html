@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PDF 转可编辑 PPTX</title>
+<link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">
+      <span class="logo">P2P</span>
+      <div>
+        <h1>PDF 转可编辑 PPTX</h1>
+        <p class="subtitle">把 PDF 页面还原为 PowerPoint 原生对象：文字可编辑、图片可缩放、图形与表格可还原</p>
+      </div>
+    </div>
+    <nav class="links">
+      <a href="/docs" target="_blank" rel="noopener">API 文档</a>
+      <a href="/api/health" target="_blank" rel="noopener">健康检查</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap layout">
+  <section class="panel">
+    <h2>1. 上传 PDF</h2>
+    <div id="dropzone" class="dropzone" tabindex="0" role="button" aria-label="选择或拖拽 PDF 文件">
+      <div class="dz-icon">⬆</div>
+      <p class="dz-title">拖拽 PDF 到此处，或 <span class="link">点击选择文件</span></p>
+      <p class="dz-hint">支持批量上传，单个文件上限 <span id="max-size">100</span> MB</p>
+      <input type="file" id="file-input" accept="application/pdf,.pdf" multiple hidden />
+    </div>
+
+    <ul id="file-list" class="file-list"></ul>
+
+    <div class="options">
+      <label class="switch">
+        <input type="checkbox" id="opt-ocr" checked />
+        <span>图片型 PDF 的文字 OCR 还原</span>
+      </label>
+      <label class="switch">
+        <input type="checkbox" id="opt-art" checked />
+        <span>复杂矢量图形保留为独立图片</span>
+      </label>
+      <label class="switch">
+        <input type="checkbox" id="opt-tables" checked />
+        <span>识别表格并还原为 PPT 表格</span>
+      </label>
+    </div>
+
+    <button id="convert-btn" class="primary" disabled>开始转换</button>
+    <p id="status" class="status"></p>
+  </section>
+
+  <section class="panel">
+    <h2>2. 转换结果</h2>
+    <div id="results" class="results">
+      <p class="placeholder">尚未转换。上传 PDF 后点击「开始转换」。</p>
+    </div>
+    <div id="errors" class="errors"></div>
+  </section>
+</main>
+
+<dialog id="detail-dialog" class="dialog">
+  <form method="dialog" class="dialog-head">
+    <h3 id="detail-title">元素明细</h3>
+    <button class="close" value="close" aria-label="关闭">✕</button>
+  </form>
+  <div id="detail-body" class="dialog-body"></div>
+</dialog>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>pdf2pptx-service · 基于 FastAPI + PyMuPDF + python-pptx · 转换结果可在 PowerPoint / WPS 中直接编辑</p>
+  </div>
+</footer>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

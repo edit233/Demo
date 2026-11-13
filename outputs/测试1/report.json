@@ -1,0 +1,4791 @@
+{
+  "source_name": "测试1.pdf",
+  "page_count": 10,
+  "summary": {
+    "text_lines": 299,
+    "text_chars": 2931,
+    "images": 10,
+    "shapes": 0,
+    "tables": 0,
+    "art_layers": 0,
+    "editable_objects": 309,
+    "editable_ratio": 1.0
+  },
+  "pages": [
+    {
+      "index": 1,
+      "width": 852.0,
+      "height": 1212.0,
+      "ocr": true,
+      "text_lines": 9,
+      "text_chars": 176,
+      "images": 1,
+      "shapes": 0,
+      "tables": 0,
+      "art_layers": 0,
+      "elements": [
+        {
+          "type": "text",
+          "text": "宏远建设",
+          "bbox": [
+            687.0,
+            64.85,
+            803.0,
+            95.0
+          ],
+          "font": "",
+          "size": 26.23,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "HONGYUANCONSTRUCTION",
+          "bbox": [
+            688.0,
+            95.44,
+            804.0,
+            112.0
+          ],
+          "font": "",
+          "size": 9.35,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "BUILD A BETTER TOMORROW",
+          "bbox": [
+            76.0,
+            205.75,
+            488.0,
+            222.0
+          ],
+          "font": "",
+          "size": 20.83,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "匠心筑造美好未来",
+          "bbox": [
+            78.0,
+            250.28,
+            696.0,
+            331.0
+          ],
+          "font": "",
+          "size": 72.63,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "建筑城市价值创享品质生活",
+          "bbox": [
+            78.0,
+            356.76,
+            532.0,
+            386.0
+          ],
+          "font": "",
+          "size": 26.99,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "CONSTRUCTION CREATES URBAN VALUE",
+          "bbox": [
+            78.0,
+            409.92,
+            465.0,
+            424.0
+          ],
+          "font": "",
+          "size": 18.06,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "AND SHARESA BETTER LIFE",
+          "bbox": [
+            78.0,
+            433.0,
+            338.0,
+            446.0
+          ],
+          "font": "",
+          "size": 16.67,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "专业|责任|创新|共赢",
+          "bbox": [
+            515.0,
+            1073.5,
+            792.0,
+            1094.0
+          ],
+          "font": "",
+          "size": 12.48,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "PROFESSIONAL RESPONSIBLE INNOVATIVE WIN-WIN",
+          "bbox": [
+            455.0,
+            1111.25,
+            793.0,
+            1121.0
+          ],
+          "font": "",
+          "size": 12.5,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.0,
+            0.0,
+            852.0,
+            1212.0
+          ],
+          "pixel": [
+            852,
+            1212
+          ],
+          "format": "jpeg",
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "width": 852.0,
+      "height": 1212.0,
+      "ocr": true,
+      "text_lines": 15,
+      "text_chars": 147,
+      "images": 1,
+      "shapes": 0,
+      "tables": 0,
+      "art_layers": 0,
+      "elements": [
+        {
+          "type": "text",
+          "text": "郑州莱奥特科技",
+          "bbox": [
+            105.0,
+            38.67,
+            254.0,
+            61.0
+          ],
+          "font": "",
+          "size": 19.44,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "柯幻熊猫·AI智能体",
+          "bbox": [
+            608.0,
+            37.37,
+            745.0,
+            53.0
+          ],
+          "font": "",
+          "size": 13.59,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "柯幻熊猫",
+          "bbox": [
+            51.0,
+            172.05,
+            316.0,
+            248.0
+          ],
+          "font": "",
+          "size": 66.25,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "让AI更懂行业让智能更近人心",
+          "bbox": [
+            55.0,
+            278.34,
+            512.0,
+            313.0
+          ],
+          "font": "",
+          "size": 30.53,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "AI",
+          "bbox": [
+            704.0,
+            295.18,
+            721.0,
+            308.0
+          ],
+          "font": "",
+          "size": 13.71,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "CREATES",
+          "bbox": [
+            704.0,
+            325.0,
+            795.0,
+            338.0
+          ],
+          "font": "",
+          "size": 16.67,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "以人工智能为引擎，连接场景与价值，",
+          "bbox": [
+            57.0,
+            344.89,
+            388.0,
+            367.0
+          ],
+          "font": "",
+          "size": 17.61,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "A BETTER",
+          "bbox": [
+            704.0,
+            354.92,
+            795.0,
+            369.0
+          ],
+          "font": "",
+          "size": 18.06,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "为行业数字化转型提供更可靠的智能伙伴。",
+          "bbox": [
+            56.0,
+            380.86,
+            431.0,
+            402.0
+          ],
+          "font": "",
+          "size": 17.85,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "TOMORROW",
+          "bbox": [
+            704.0,
+            384.92,
+            810.0,
+            399.0
+          ],
+          "font": "",
+          "size": 18.06,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "AI",
+          "bbox": [
+            219.0,
+            769.31,
+            254.0,
+            812.0
+          ],
+          "font": "",
+          "size": 28.23,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "AI",
+          "bbox": [
+            493.0,
+            827.13,
+            511.0,
+            846.0
+          ],
+          "font": "",
+          "size": 14.52,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "Zhengzhou Lai'aoteTechnology Co.,Ltd",
+          "bbox": [
+            51.0,
+            1151.2,
+            296.0,
+            1165.0
+          ],
+          "font": "",
+          "size": 13.37,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "柯幻猫·AI智能体",
+          "bbox": [
+            589.0,
+            1150.79,
+            705.0,
+            1165.0
+          ],
+          "font": "",
+          "size": 10.08,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "01",
+          "bbox": [
+            785.0,
+            1152.18,
+            800.0,
+            1165.0
+          ],
+          "font": "",
+          "size": 13.64,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.0,
+            0.0,
+            852.0,
+            1212.0
+          ],
+          "pixel": [
+            852,
+            1212
+          ],
+          "format": "jpeg",
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "width": 852.0,
+      "height": 1212.0,
+      "ocr": true,
+      "text_lines": 48,
+      "text_chars": 243,
+      "images": 1,
+      "shapes": 0,
+      "tables": 0,
+      "art_layers": 0,
+      "elements": [
+        {
+          "type": "text",
+          "text": "郑州莱奥特科技",
+          "bbox": [
+            104.0,
+            38.65,
+            254.0,
+            61.0
+          ],
+          "font": "",
+          "size": 19.57,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "柯幻熊猫·AI智能体",
+          "bbox": [
+            608.0,
+            37.36,
+            746.0,
+            53.0
+          ],
+          "font": "",
+          "size": 13.68,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "目录",
+          "bbox": [
+            62.0,
+            153.31,
+            196.0,
+            227.0
+          ],
+          "font": "",
+          "size": 55.76,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "CONTENTS",
+          "bbox": [
+            61.0,
+            246.42,
+            281.0,
+            267.0
+          ],
+          "font": "",
+          "size": 26.39,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "03",
+          "bbox": [
+            450.0,
+            223.6,
+            494.0,
+            256.0
+          ],
+          "font": "",
+          "size": 40.0,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "技术实力",
+          "bbox": [
+            472.0,
+            269.35,
+            564.0,
+            295.0
+          ],
+          "font": "",
+          "size": 22.05,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "15",
+          "bbox": [
+            757.0,
+            276.96,
+            776.0,
+            293.0
+          ],
+          "font": "",
+          "size": 17.27,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "·技术架构",
+          "bbox": [
+            474.0,
+            315.85,
+            566.0,
+            336.0
+          ],
+          "font": "",
+          "size": 17.89,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "·核心算法",
+          "bbox": [
+            474.0,
+            345.85,
+            567.0,
+            366.0
+          ],
+          "font": "",
+          "size": 17.89,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "·数据安全",
+          "bbox": [
+            478.0,
+            375.98,
+            566.0,
+            395.0
+          ],
+          "font": "",
+          "size": 16.84,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "01",
+          "bbox": [
+            55.0,
+            400.49,
+            101.0,
+            440.0
+          ],
+          "font": "",
+          "size": 41.82,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "·研发创新",
+          "bbox": [
+            474.0,
+            405.98,
+            567.0,
+            424.0
+          ],
+          "font": "",
+          "size": 16.84,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "关于我们",
+          "bbox": [
+            80.0,
+            458.38,
+            171.0,
+            484.0
+          ],
+          "font": "",
+          "size": 21.81,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "01",
+          "bbox": [
+            309.0,
+            464.07,
+            326.0,
+            480.0
+          ],
+          "font": "",
+          "size": 15.45,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "04",
+          "bbox": [
+            450.0,
+            466.6,
+            494.0,
+            499.0
+          ],
+          "font": "",
+          "size": 40.0,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "·公司简介",
+          "bbox": [
+            81.0,
+            508.98,
+            176.0,
+            528.0
+          ],
+          "font": "",
+          "size": 16.84,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "行业应用",
+          "bbox": [
+            472.0,
+            510.38,
+            563.0,
+            536.0
+          ],
+          "font": "",
+          "size": 21.81,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "21",
+          "bbox": [
+            754.0,
+            517.02,
+            772.0,
+            533.0
+          ],
+          "font": "",
+          "size": 16.36,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "·发展历程",
+          "bbox": [
+            81.0,
+            538.85,
+            175.0,
+            558.0
+          ],
+          "font": "",
+          "size": 17.89,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "·核心优势",
+          "bbox": [
+            81.0,
+            569.58,
+            176.0,
+            588.0
+          ],
+          "font": "",
+          "size": 11.86,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "·智慧政务",
+          "bbox": [
+            478.0,
+            557.98,
+            567.0,
+            577.0
+          ],
+          "font": "",
+          "size": 16.84,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "·企业文化",
+          "bbox": [
+            81.0,
+            598.98,
+            176.0,
+            618.0
+          ],
+          "font": "",
+          "size": 16.84,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "·智慧教育",
+          "bbox": [
+            478.0,
+            587.98,
+            567.0,
+            607.0
+          ],
+          "font": "",
+          "size": 16.84,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "智慧医疗",
+          "bbox": [
+            479.0,
+            617.98,
+            566.0,
+            637.0
+          ],
+          "font": "",
+          "size": 16.84,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "企业服务",
+          "bbox": [
+            482.0,
+            647.85,
+            567.0,
+            667.0
+          ],
+          "font": "",
+          "size": 17.89,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "·更多行业场景",
+          "bbox": [
+            478.0,
+            677.98,
+            602.0,
+            697.0
+          ],
+          "font": "",
+          "size": 16.84,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "02",
+          "bbox": [
+            55.0,
+            726.11,
+            108.0,
+            767.0
+          ],
+          "font": "",
+          "size": 48.18,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "05",
+          "bbox": [
+            450.0,
+            746.6,
+            494.0,
+            780.0
+          ],
+          "font": "",
+          "size": 40.0,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "产品与解决方案",
+          "bbox": [
+            80.0,
+            785.49,
+            239.0,
+            811.0
+          ],
+          "font": "",
+          "size": 20.91,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "07",
+          "bbox": [
+            309.0,
+            790.85,
+            330.0,
+            808.0
+          ],
+          "font": "",
+          "size": 19.09,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "客户案例",
+          "bbox": [
+            473.0,
+            792.38,
+            564.0,
+            818.0
+          ],
+          "font": "",
+          "size": 21.81,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "27",
+          "bbox": [
+            756.0,
+            796.91,
+            776.0,
+            814.0
+          ],
+          "font": "",
+          "size": 18.18,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "·产品体系",
+          "bbox": [
+            81.0,
+            834.98,
+            175.0,
+            855.0
+          ],
+          "font": "",
+          "size": 16.84,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "·典型案例",
+          "bbox": [
+            478.0,
+            839.98,
+            566.0,
+            859.0
+          ],
+          "font": "",
+          "size": 16.84,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "·核心功能",
+          "bbox": [
+            81.0,
+            864.85,
+            176.0,
+            885.0
+          ],
+          "font": "",
+          "size": 17.89,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "·客户价值",
+          "bbox": [
+            474.0,
+            865.98,
+            566.0,
+            885.0
+          ],
+          "font": "",
+          "size": 16.84,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "·行业解决方案",
+          "bbox": [
+            81.0,
+            894.85,
+            212.0,
+            915.0
+          ],
+          "font": "",
+          "size": 17.89,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "合作伙伴",
+          "bbox": [
+            478.0,
+            891.98,
+            566.0,
+            911.0
+          ],
+          "font": "",
+          "size": 16.84,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "应用场景",
+          "bbox": [
+            88.0,
+            925.98,
+            175.0,
+            945.0
+          ],
+          "font": "",
+          "size": 16.84,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "06",
+          "bbox": [
+            450.0,
+            952.6,
+            494.0,
+            985.0
+          ],
+          "font": "",
+          "size": 40.0,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "未来展望",
+          "bbox": [
+            470.0,
+            994.09,
+            567.0,
+            1025.0
+          ],
+          "font": "",
+          "size": 24.25,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "33",
+          "bbox": [
+            756.0,
+            1002.96,
+            775.0,
+            1019.0
+          ],
+          "font": "",
+          "size": 17.27,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "·发展战略",
+          "bbox": [
+            474.0,
+            1040.98,
+            566.0,
+            1060.0
+          ],
+          "font": "",
+          "size": 16.84,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "生态布局",
+          "bbox": [
+            479.0,
+            1067.98,
+            566.0,
+            1087.0
+          ],
+          "font": "",
+          "size": 16.84,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "·与您共建智能未来",
+          "bbox": [
+            478.0,
+            1093.98,
+            635.0,
+            1113.0
+          ],
+          "font": "",
+          "size": 16.84,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "Zhengzhou LaiaoteTechnology Co.,Ltd",
+          "bbox": [
+            51.0,
+            1151.18,
+            296.0,
+            1165.0
+          ],
+          "font": "",
+          "size": 13.66,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "椅幻熊猫·AI智能体",
+          "bbox": [
+            588.0,
+            1150.81,
+            705.0,
+            1164.0
+          ],
+          "font": "",
+          "size": 9.93,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "02",
+          "bbox": [
+            785.0,
+            1152.07,
+            802.0,
+            1165.0
+          ],
+          "font": "",
+          "size": 15.45,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.0,
+            0.0,
+            852.0,
+            1212.0
+          ],
+          "pixel": [
+            852,
+            1212
+          ],
+          "format": "jpeg",
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "width": 852.0,
+      "height": 1212.0,
+      "ocr": true,
+      "text_lines": 24,
+      "text_chars": 292,
+      "images": 1,
+      "shapes": 0,
+      "tables": 0,
+      "art_layers": 0,
+      "elements": [
+        {
+          "type": "text",
+          "text": "郑州莱奥特科技",
+          "bbox": [
+            101.0,
+            29.31,
+            258.0,
+            59.0
+          ],
+          "font": "",
+          "size": 22.43,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "柯幻熊猫·AI智能体",
+          "bbox": [
+            616.0,
+            33.18,
+            747.0,
+            48.0
+          ],
+          "font": "",
+          "size": 15.2,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "P20|制造工艺·生产流程",
+          "bbox": [
+            49.0,
+            102.6,
+            310.0,
+            126.0
+          ],
+          "font": "",
+          "size": 20.0,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "制造工艺·生产流程",
+          "bbox": [
+            51.0,
+            159.07,
+            465.0,
+            208.0
+          ],
+          "font": "",
+          "size": 49.4,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "从原材料到成品的全流程品控体系，确保每一件产品的稳定与可靠。",
+          "bbox": [
+            49.0,
+            225.7,
+            651.0,
+            250.0
+          ],
+          "font": "",
+          "size": 19.16,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "01原材料准备",
+          "bbox": [
+            511.0,
+            299.47,
+            694.0,
+            340.0
+          ],
+          "font": "",
+          "size": 21.05,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "选用优质原材料，经过严格的来料",
+          "bbox": [
+            555.0,
+            569.11,
+            805.0,
+            587.0
+          ],
+          "font": "",
+          "size": 15.73,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "检验，确保材料性能符合标准要求，",
+          "bbox": [
+            554.0,
+            595.3,
+            810.0,
+            614.0
+          ],
+          "font": "",
+          "size": 14.2,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "从源头保障产品质量。",
+          "bbox": [
+            555.0,
+            622.28,
+            707.0,
+            640.0
+          ],
+          "font": "",
+          "size": 14.29,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "02",
+          "bbox": [
+            512.0,
+            687.42,
+            541.0,
+            710.0
+          ],
+          "font": "",
+          "size": 26.36,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "精密加工制造",
+          "bbox": [
+            590.0,
+            701.46,
+            717.0,
+            727.0
+          ],
+          "font": "",
+          "size": 21.17,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "原材料",
+          "bbox": [
+            69.0,
+            772.4,
+            134.0,
+            800.0
+          ],
+          "font": "",
+          "size": 21.67,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "精密加工装配检测",
+          "bbox": [
+            209.0,
+            774.47,
+            430.0,
+            798.0
+          ],
+          "font": "",
+          "size": 21.05,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "精选优质原料高精度设备加工标准化装配流程",
+          "bbox": [
+            64.0,
+            831.11,
+            451.0,
+            849.0
+          ],
+          "font": "",
+          "size": 15.79,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "严格来料检测多道工序控制多维度质量检测",
+          "bbox": [
+            64.0,
+            858.11,
+            451.0,
+            875.0
+          ],
+          "font": "",
+          "size": 15.79,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "确保产品品质保证尺寸精度确保产品性能",
+          "bbox": [
+            65.0,
+            884.11,
+            438.0,
+            902.0
+          ],
+          "font": "",
+          "size": 15.79,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "的稳定性",
+          "bbox": [
+            65.0,
+            911.25,
+            127.0,
+            929.0
+          ],
+          "font": "",
+          "size": 14.58,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "与一致性",
+          "bbox": [
+            204.0,
+            911.32,
+            267.0,
+            929.0
+          ],
+          "font": "",
+          "size": 13.98,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "稳定可靠",
+          "bbox": [
+            343.0,
+            911.25,
+            405.0,
+            929.0
+          ],
+          "font": "",
+          "size": 14.58,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "采用先进的数控加工设备，按照工艺",
+          "bbox": [
+            555.0,
+            961.22,
+            808.0,
+            980.0
+          ],
+          "font": "",
+          "size": 14.87,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "标准进行精密加工，确保产品尺寸",
+          "bbox": [
+            554.0,
+            988.2,
+            807.0,
+            1007.0
+          ],
+          "font": "",
+          "size": 14.97,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "精度和表面质量。",
+          "bbox": [
+            555.0,
+            1014.36,
+            678.0,
+            1032.0
+          ],
+          "font": "",
+          "size": 13.65,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "Zhengzhou LaiaoteTechnology Co.,LtdI柯幻熊猫·Al智能体",
+          "bbox": [
+            48.0,
+            1155.26,
+            440.0,
+            1172.0
+          ],
+          "font": "",
+          "size": 14.48,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "20",
+          "bbox": [
+            787.0,
+            1158.02,
+            805.0,
+            1173.0
+          ],
+          "font": "",
+          "size": 16.36,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.0,
+            0.0,
+            852.0,
+            1212.0
+          ],
+          "pixel": [
+            852,
+            1212
+          ],
+          "format": "jpeg",
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "width": 852.0,
+      "height": 1212.0,
+      "ocr": true,
+      "text_lines": 13,
+      "text_chars": 247,
+      "images": 1,
+      "shapes": 0,
+      "tables": 0,
+      "art_layers": 0,
+      "elements": [
+        {
+          "type": "text",
+          "text": "郑州莱奥特科技",
+          "bbox": [
+            98.0,
+            29.33,
+            254.0,
+            59.0
+          ],
+          "font": "",
+          "size": 22.29,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "柯幻熊猫·AI智能体",
+          "bbox": [
+            614.0,
+            33.48,
+            742.0,
+            48.0
+          ],
+          "font": "",
+          "size": 12.63,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "P10|案例合集·多图网格",
+          "bbox": [
+            48.0,
+            102.73,
+            307.0,
+            126.0
+          ],
+          "font": "",
+          "size": 18.95,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "案例合集·多图网格",
+          "bbox": [
+            49.0,
+            158.03,
+            466.0,
+            207.0
+          ],
+          "font": "",
+          "size": 49.76,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "覆盖多行业应用场景，以可靠品质和定制化方案，助力客户实现更大价值。",
+          "bbox": [
+            48.0,
+            226.74,
+            733.0,
+            249.0
+          ],
+          "font": "",
+          "size": 18.87,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "01工业自动化生产线",
+          "bbox": [
+            57.0,
+            299.47,
+            294.0,
+            334.0
+          ],
+          "font": "",
+          "size": 21.05,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "为某知名制造企业提供定制化自动化生产线解决方案，实现了生产效率提升40%，",
+          "bbox": [
+            96.0,
+            635.15,
+            712.0,
+            655.0
+          ],
+          "font": "",
+          "size": 15.45,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "产品不良率降低60%，得到客户高度认可。",
+          "bbox": [
+            96.0,
+            662.18,
+            415.0,
+            680.0
+          ],
+          "font": "",
+          "size": 15.18,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "02新能源行业应用",
+          "bbox": [
+            56.0,
+            722.47,
+            273.0,
+            756.0
+          ],
+          "font": "",
+          "size": 21.05,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "为新能源领域客户提供核心部件及系统集成方案，产品广泛应用于储能、光伏等领域，",
+          "bbox": [
+            96.0,
+            1053.22,
+            730.0,
+            1072.0
+          ],
+          "font": "",
+          "size": 14.81,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "助力客户实现绿色低碳发展。",
+          "bbox": [
+            96.0,
+            1080.3,
+            303.0,
+            1098.0
+          ],
+          "font": "",
+          "size": 14.13,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "Zhengzhou LaiaoteTechnology Co.,Ltd|柯幻猫·Al 智能体",
+          "bbox": [
+            47.0,
+            1155.18,
+            443.0,
+            1172.0
+          ],
+          "font": "",
+          "size": 15.16,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "10",
+          "bbox": [
+            788.0,
+            1158.18,
+            803.0,
+            1173.0
+          ],
+          "font": "",
+          "size": 13.64,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.0,
+            0.0,
+            852.0,
+            1212.0
+          ],
+          "pixel": [
+            852,
+            1212
+          ],
+          "format": "jpeg",
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "width": 852.0,
+      "height": 1212.0,
+      "ocr": true,
+      "text_lines": 44,
+      "text_chars": 440,
+      "images": 1,
+      "shapes": 0,
+      "tables": 0,
+      "art_layers": 0,
+      "elements": [
+        {
+          "type": "text",
+          "text": "郑州莱奥特科技",
+          "bbox": [
+            96.0,
+            34.39,
+            248.0,
+            64.0
+          ],
+          "font": "",
+          "size": 21.71,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "柯幻熊猫·AI智能体",
+          "bbox": [
+            652.0,
+            39.23,
+            812.0,
+            59.0
+          ],
+          "font": "",
+          "size": 14.74,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "P21|质量管理·闭环图",
+          "bbox": [
+            73.0,
+            104.86,
+            239.0,
+            122.0
+          ],
+          "font": "",
+          "size": 9.47,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "1质量管理·全流程闭环",
+          "bbox": [
+            49.0,
+            152.16,
+            532.0,
+            204.0
+          ],
+          "font": "",
+          "size": 48.64,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "以标准化体系保障产品与服务质量，持续改进，形成可追溯的闭环管理",
+          "bbox": [
+            72.0,
+            222.67,
+            730.0,
+            246.0
+          ],
+          "font": "",
+          "size": 19.38,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "01需求与标准",
+          "bbox": [
+            367.0,
+            287.98,
+            484.0,
+            308.0
+          ],
+          "font": "",
+          "size": 16.84,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "三",
+          "bbox": [
+            304.0,
+            311.96,
+            321.0,
+            337.0
+          ],
+          "font": "",
+          "size": 17.0,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "明确需求",
+          "bbox": [
+            397.0,
+            315.49,
+            451.0,
+            331.0
+          ],
+          "font": "",
+          "size": 12.58,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "制定标准",
+          "bbox": [
+            397.0,
+            335.42,
+            451.0,
+            351.0
+          ],
+          "font": "",
+          "size": 13.19,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "风险评估",
+          "bbox": [
+            393.0,
+            355.39,
+            450.0,
+            375.0
+          ],
+          "font": "",
+          "size": 13.45,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "标准化全员参与持续改进",
+          "bbox": [
+            599.0,
+            406.77,
+            810.0,
+            426.0
+          ],
+          "font": "",
+          "size": 18.55,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "规范流程质量文化数掘驱动",
+          "bbox": [
+            597.0,
+            444.48,
+            807.0,
+            459.0
+          ],
+          "font": "",
+          "size": 12.63,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "统一标准责任到人问腿网环",
+          "bbox": [
+            597.0,
+            466.48,
+            807.0,
+            481.0
+          ],
+          "font": "",
+          "size": 12.63,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "质量管理",
+          "bbox": [
+            248.0,
+            475.43,
+            367.0,
+            513.0
+          ],
+          "font": "",
+          "size": 29.75,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "可度量协同共建不断优化",
+          "bbox": [
+            603.0,
+            487.16,
+            807.0,
+            502.0
+          ],
+          "font": "",
+          "size": 15.29,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "04交付与改进",
+          "bbox": [
+            38.0,
+            512.71,
+            158.0,
+            533.0
+          ],
+          "font": "",
+          "size": 19.04,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "持续改进",
+          "bbox": [
+            277.0,
+            518.34,
+            336.0,
+            535.0
+          ],
+          "font": "",
+          "size": 13.81,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "02开发与实现",
+          "bbox": [
+            448.0,
+            514.78,
+            568.0,
+            535.0
+          ],
+          "font": "",
+          "size": 18.49,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "用户反馈",
+          "bbox": [
+            72.0,
+            540.53,
+            128.0,
+            556.0
+          ],
+          "font": "",
+          "size": 12.21,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "客户满意",
+          "bbox": [
+            277.0,
+            540.44,
+            336.0,
+            556.0
+          ],
+          "font": "",
+          "size": 12.99,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "过程控制",
+          "bbox": [
+            481.0,
+            542.34,
+            540.0,
+            558.0
+          ],
+          "font": "",
+          "size": 13.81,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "数据分析",
+          "bbox": [
+            72.0,
+            561.46,
+            127.0,
+            577.0
+          ],
+          "font": "",
+          "size": 12.81,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "代码审查",
+          "bbox": [
+            480.0,
+            563.34,
+            539.0,
+            579.0
+          ],
+          "font": "",
+          "size": 13.81,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "持续优化",
+          "bbox": [
+            71.0,
+            582.33,
+            128.0,
+            598.0
+          ],
+          "font": "",
+          "size": 13.94,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "单元测试",
+          "bbox": [
+            481.0,
+            584.34,
+            540.0,
+            601.0
+          ],
+          "font": "",
+          "size": 13.81,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "03测试与验证",
+          "bbox": [
+            357.0,
+            625.23,
+            476.0,
+            645.0
+          ],
+          "font": "",
+          "size": 14.77,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "功能测试",
+          "bbox": [
+            390.0,
+            653.46,
+            445.0,
+            668.0
+          ],
+          "font": "",
+          "size": 12.81,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "性能测试",
+          "bbox": [
+            389.0,
+            674.43,
+            445.0,
+            689.0
+          ],
+          "font": "",
+          "size": 13.05,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "安全测试",
+          "bbox": [
+            390.0,
+            694.6,
+            444.0,
+            710.0
+          ],
+          "font": "",
+          "size": 11.65,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "质量保障体系",
+          "bbox": [
+            111.0,
+            759.16,
+            253.0,
+            789.0
+          ],
+          "font": "",
+          "size": 23.67,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "质量目标",
+          "bbox": [
+            572.0,
+            757.0,
+            672.0,
+            791.0
+          ],
+          "font": "",
+          "size": 25.0,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "建立覆盖产品全生命同期的质量管理体系，从需求、开发、",
+          "bbox": [
+            69.0,
+            820.34,
+            453.0,
+            837.0
+          ],
+          "font": "",
+          "size": 13.83,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "以客户价值为导向，持续提升产",
+          "bbox": [
+            527.0,
+            812.96,
+            791.0,
+            833.0
+          ],
+          "font": "",
+          "size": 16.96,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "测试到交付与运维，形成标准化、可追测、可持续改进的闭环",
+          "bbox": [
+            69.0,
+            844.38,
+            460.0,
+            861.0
+          ],
+          "font": "",
+          "size": 13.5,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "品与服务质量，打造可信赖的",
+          "bbox": [
+            528.0,
+            839.97,
+            773.0,
+            861.0
+          ],
+          "font": "",
+          "size": 16.95,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "机制，确保为客户提供高质量的产品与服务。",
+          "bbox": [
+            68.0,
+            867.45,
+            362.0,
+            884.0
+          ],
+          "font": "",
+          "size": 12.94,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "AI智能化解决方案。",
+          "bbox": [
+            528.0,
+            868.2,
+            684.0,
+            887.0
+          ],
+          "font": "",
+          "size": 14.96,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "完善的质量管理流程与标准体系",
+          "bbox": [
+            125.0,
+            927.18,
+            351.0,
+            946.0
+          ],
+          "font": "",
+          "size": 15.18,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "99.9%系统稳定性",
+          "bbox": [
+            546.0,
+            915.73,
+            726.0,
+            937.0
+          ],
+          "font": "",
+          "size": 18.95,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "多维度测试与风险控制机制",
+          "bbox": [
+            126.0,
+            975.17,
+            321.0,
+            994.0
+          ],
+          "font": "",
+          "size": 15.28,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "100%重大缺陷闭环率",
+          "bbox": [
+            547.0,
+            972.73,
+            764.0,
+            994.0
+          ],
+          "font": "",
+          "size": 18.95,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "基于数据的持续改进与客户反馈闭环",
+          "bbox": [
+            124.0,
+            1022.99,
+            392.0,
+            1045.0
+          ],
+          "font": "",
+          "size": 16.75,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "95%客户满意度",
+          "bbox": [
+            547.0,
+            1032.11,
+            731.0,
+            1053.0
+          ],
+          "font": "",
+          "size": 15.79,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "ZhengzhouLeoTechTechnology Co.,Ltd.|郑州莱奥特科技",
+          "bbox": [
+            47.0,
+            1150.29,
+            411.0,
+            1167.0
+          ],
+          "font": "",
+          "size": 14.26,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.0,
+            0.0,
+            852.0,
+            1212.0
+          ],
+          "pixel": [
+            852,
+            1212
+          ],
+          "format": "jpeg",
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "width": 852.0,
+      "height": 1212.0,
+      "ocr": true,
+      "text_lines": 28,
+      "text_chars": 421,
+      "images": 1,
+      "shapes": 0,
+      "tables": 0,
+      "art_layers": 0,
+      "elements": [
+        {
+          "type": "text",
+          "text": "郑州莱奥特科技",
+          "bbox": [
+            92.0,
+            36.38,
+            245.0,
+            63.0
+          ],
+          "font": "",
+          "size": 21.86,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "柯幻熊猫·AI智能体",
+          "bbox": [
+            648.0,
+            39.23,
+            809.0,
+            59.0
+          ],
+          "font": "",
+          "size": 14.74,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "P14丨团队介绍·人物卡",
+          "bbox": [
+            69.0,
+            104.57,
+            238.0,
+            123.0
+          ],
+          "font": "",
+          "size": 11.93,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "核心团队·专业创新",
+          "bbox": [
+            46.0,
+            155.2,
+            472.0,
+            208.0
+          ],
+          "font": "",
+          "size": 40.0,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "多元化的专业团队，深耕AI技术与行业应用，持续创造客户价值",
+          "bbox": [
+            63.0,
+            224.63,
+            677.0,
+            248.0
+          ],
+          "font": "",
+          "size": 19.72,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "18%",
+          "bbox": [
+            66.0,
+            332.5,
+            105.0,
+            352.0
+          ],
+          "font": "",
+          "size": 25.0,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "张明远",
+          "bbox": [
+            58.0,
+            528.63,
+            120.0,
+            552.0
+          ],
+          "font": "",
+          "size": 19.73,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "李思雨",
+          "bbox": [
+            254.0,
+            528.63,
+            316.0,
+            552.0
+          ],
+          "font": "",
+          "size": 19.73,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "王浩然",
+          "bbox": [
+            452.0,
+            529.58,
+            514.0,
+            553.0
+          ],
+          "font": "",
+          "size": 20.2,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "陈雅宁",
+          "bbox": [
+            650.0,
+            528.58,
+            712.0,
+            553.0
+          ],
+          "font": "",
+          "size": 20.2,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "创始人/CEO",
+          "bbox": [
+            57.0,
+            559.61,
+            148.0,
+            579.0
+          ],
+          "font": "",
+          "size": 11.58,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "技术负责人",
+          "bbox": [
+            254.0,
+            559.31,
+            329.0,
+            576.0
+          ],
+          "font": "",
+          "size": 14.05,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "产品负责人",
+          "bbox": [
+            452.0,
+            560.39,
+            528.0,
+            578.0
+          ],
+          "font": "",
+          "size": 13.38,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "运警负责人",
+          "bbox": [
+            649.0,
+            560.39,
+            725.0,
+            578.0
+          ],
+          "font": "",
+          "size": 13.38,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "·10+年AI行业经验",
+          "bbox": [
+            55.0,
+            594.51,
+            193.0,
+            611.0
+          ],
+          "font": "",
+          "size": 12.45,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "·AI算法与大模型专家·5+年产品管理经验·8+年市场与运营经验",
+          "bbox": [
+            249.0,
+            594.23,
+            793.0,
+            611.0
+          ],
+          "font": "",
+          "size": 14.74,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "·前互联网大厂技术负责人·8+年研发管理经验·深联企业数字化领域·擅长品牌建设与渠道拓展",
+          "bbox": [
+            55.0,
+            619.23,
+            803.0,
+            637.0
+          ],
+          "font": "",
+          "size": 14.74,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "·擅长战璐规划与产品创新·主导核心技术架构",
+          "bbox": [
+            55.0,
+            645.36,
+            388.0,
+            663.0
+          ],
+          "font": "",
+          "size": 13.68,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "·擅长需求分析与落地·推动生态合作与商业化",
+          "bbox": [
+            445.0,
+            646.02,
+            796.0,
+            663.0
+          ],
+          "font": "",
+          "size": 16.53,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "团队优势",
+          "bbox": [
+            137.0,
+            757.23,
+            237.0,
+            792.0
+          ],
+          "font": "",
+          "size": 23.09,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "专业背景扎实丰富的行业经验协同创新能力",
+          "bbox": [
+            89.0,
+            888.01,
+            575.0,
+            912.0
+          ],
+          "font": "",
+          "size": 24.94,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "以客户为中心",
+          "bbox": [
+            650.0,
+            888.8,
+            766.0,
+            912.0
+          ],
+          "font": "",
+          "size": 18.36,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "·来自国内外知名高校·深耕AI与行业应用·跨领域协作机制",
+          "bbox": [
+            73.0,
+            939.23,
+            553.0,
+            957.0
+          ],
+          "font": "",
+          "size": 14.74,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "·深入理解客户场景",
+          "bbox": [
+            632.0,
+            939.23,
+            774.0,
+            957.0
+          ],
+          "font": "",
+          "size": 14.74,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "·具备多学科复合能力·服务多家头部客户·快速响应客户需求",
+          "bbox": [
+            73.0,
+            970.23,
+            564.0,
+            989.0
+          ],
+          "font": "",
+          "size": 14.74,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "·提供定制化解决方案",
+          "bbox": [
+            632.0,
+            970.16,
+            781.0,
+            988.0
+          ],
+          "font": "",
+          "size": 15.33,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "·持续学习与技术沉淀·具备规模化落地能力·持续推动技术与业务融合·创造长期合作价值",
+          "bbox": [
+            73.0,
+            1002.23,
+            770.0,
+            1021.0
+          ],
+          "font": "",
+          "size": 14.74,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "ZhengzhouLeoTechTechnology Co.,Ltd.|郑州莱奥特科技",
+          "bbox": [
+            42.0,
+            1150.28,
+            408.0,
+            1167.0
+          ],
+          "font": "",
+          "size": 14.34,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.0,
+            0.0,
+            852.0,
+            1212.0
+          ],
+          "pixel": [
+            852,
+            1212
+          ],
+          "format": "jpeg",
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "width": 852.0,
+      "height": 1212.0,
+      "ocr": true,
+      "text_lines": 62,
+      "text_chars": 455,
+      "images": 1,
+      "shapes": 0,
+      "tables": 0,
+      "art_layers": 0,
+      "elements": [
+        {
+          "type": "text",
+          "text": "郑州莱奥特科技",
+          "bbox": [
+            112.0,
+            28.26,
+            272.0,
+            58.0
+          ],
+          "font": "",
+          "size": 22.86,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "柯幻熊猫·AI智能体",
+          "bbox": [
+            643.0,
+            32.02,
+            805.0,
+            51.0
+          ],
+          "font": "",
+          "size": 16.52,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "P25|产品参数·规格表",
+          "bbox": [
+            54.0,
+            105.35,
+            304.0,
+            132.0
+          ],
+          "font": "",
+          "size": 22.11,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "产品参数·规格表",
+          "bbox": [
+            55.0,
+            158.37,
+            463.0,
+            215.0
+          ],
+          "font": "",
+          "size": 55.28,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "多形态可选，满足不同场景需求",
+          "bbox": [
+            56.0,
+            230.12,
+            419.0,
+            259.0
+          ],
+          "font": "",
+          "size": 24.03,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "桌面款",
+          "bbox": [
+            133.0,
+            575.09,
+            182.0,
+            593.0
+          ],
+          "font": "",
+          "size": 15.88,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "标准款",
+          "bbox": [
+            311.0,
+            575.04,
+            360.0,
+            594.0
+          ],
+          "font": "",
+          "size": 16.33,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "行业款",
+          "bbox": [
+            508.0,
+            575.04,
+            557.0,
+            594.0
+          ],
+          "font": "",
+          "size": 16.33,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "定制款",
+          "bbox": [
+            687.0,
+            575.1,
+            736.0,
+            594.0
+          ],
+          "font": "",
+          "size": 15.86,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "Mini Panda",
+          "bbox": [
+            119.0,
+            601.12,
+            195.0,
+            615.0
+          ],
+          "font": "",
+          "size": 14.73,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "Standard",
+          "bbox": [
+            304.0,
+            601.1,
+            368.0,
+            616.0
+          ],
+          "font": "",
+          "size": 15.02,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "Pro",
+          "bbox": [
+            521.0,
+            602.17,
+            544.0,
+            615.0
+          ],
+          "font": "",
+          "size": 13.86,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "Custom",
+          "bbox": [
+            684.0,
+            601.99,
+            738.0,
+            616.0
+          ],
+          "font": "",
+          "size": 16.77,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "项目",
+          "bbox": [
+            82.0,
+            652.61,
+            130.0,
+            672.0
+          ],
+          "font": "",
+          "size": 11.6,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "Mini Panda",
+          "bbox": [
+            208.0,
+            653.98,
+            296.0,
+            671.0
+          ],
+          "font": "",
+          "size": 17.05,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "Standard",
+          "bbox": [
+            372.0,
+            654.94,
+            447.0,
+            671.0
+          ],
+          "font": "",
+          "size": 17.61,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "Pro",
+          "bbox": [
+            564.0,
+            656.02,
+            591.0,
+            671.0
+          ],
+          "font": "",
+          "size": 16.27,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "Custom",
+          "bbox": [
+            711.0,
+            654.86,
+            772.0,
+            672.0
+          ],
+          "font": "",
+          "size": 18.94,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "产品定位",
+          "bbox": [
+            52.0,
+            694.39,
+            107.0,
+            710.0
+          ],
+          "font": "",
+          "size": 13.44,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "桌面陪伴",
+          "bbox": [
+            218.0,
+            695.41,
+            275.0,
+            711.0
+          ],
+          "font": "",
+          "size": 13.28,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "通用服务",
+          "bbox": [
+            378.0,
+            695.4,
+            435.0,
+            711.0
+          ],
+          "font": "",
+          "size": 13.34,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "行业应用",
+          "bbox": [
+            549.0,
+            695.4,
+            606.0,
+            711.0
+          ],
+          "font": "",
+          "size": 13.34,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "定制开发",
+          "bbox": [
+            713.0,
+            695.46,
+            768.0,
+            711.0
+          ],
+          "font": "",
+          "size": 12.81,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "整机尺寸（高×宽×深）280×220×220mm900×420×380mm1320×520×480mm按需定制",
+          "bbox": [
+            52.0,
+            731.36,
+            768.0,
+            748.0
+          ],
+          "font": "",
+          "size": 13.68,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "整机重量",
+          "bbox": [
+            51.0,
+            766.17,
+            112.0,
+            788.0
+          ],
+          "font": "",
+          "size": 15.25,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "3.5kg",
+          "bbox": [
+            232.0,
+            771.02,
+            273.0,
+            789.0
+          ],
+          "font": "",
+          "size": 16.27,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "18kg",
+          "bbox": [
+            392.0,
+            770.96,
+            429.0,
+            789.0
+          ],
+          "font": "",
+          "size": 17.29,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "32kg",
+          "bbox": [
+            561.0,
+            771.96,
+            598.0,
+            790.0
+          ],
+          "font": "",
+          "size": 17.29,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "按需定制",
+          "bbox": [
+            713.0,
+            771.46,
+            768.0,
+            787.0
+          ],
+          "font": "",
+          "size": 12.81,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "屏幕尺寸",
+          "bbox": [
+            52.0,
+            808.3,
+            110.0,
+            825.0
+          ],
+          "font": "",
+          "size": 14.19,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "7英寸",
+          "bbox": [
+            232.0,
+            808.62,
+            273.0,
+            825.0
+          ],
+          "font": "",
+          "size": 11.49,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "10.1英寸",
+          "bbox": [
+            378.0,
+            809.61,
+            440.0,
+            826.0
+          ],
+          "font": "",
+          "size": 11.58,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "21.5英寸",
+          "bbox": [
+            548.0,
+            809.99,
+            611.0,
+            826.0
+          ],
+          "font": "",
+          "size": 8.42,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "按需定制",
+          "bbox": [
+            713.0,
+            810.41,
+            768.0,
+            825.0
+          ],
+          "font": "",
+          "size": 13.28,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "分辨率",
+          "bbox": [
+            52.0,
+            847.3,
+            96.0,
+            864.0
+          ],
+          "font": "",
+          "size": 14.2,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "1024×600",
+          "bbox": [
+            218.0,
+            849.01,
+            288.0,
+            863.0
+          ],
+          "font": "",
+          "size": 16.55,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "1280×800",
+          "bbox": [
+            375.0,
+            850.01,
+            445.0,
+            864.0
+          ],
+          "font": "",
+          "size": 16.55,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "1920×1080",
+          "bbox": [
+            542.0,
+            850.02,
+            620.0,
+            864.0
+          ],
+          "font": "",
+          "size": 16.32,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "按需定制",
+          "bbox": [
+            713.0,
+            849.38,
+            769.0,
+            865.0
+          ],
+          "font": "",
+          "size": 13.54,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "AI交互",
+          "bbox": [
+            52.0,
+            888.36,
+            100.0,
+            904.0
+          ],
+          "font": "",
+          "size": 13.67,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "语音/视觉/触控语音/视觉/触控语音/视觉/触控",
+          "bbox": [
+            196.0,
+            888.23,
+            641.0,
+            907.0
+          ],
+          "font": "",
+          "size": 14.74,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "按需定制",
+          "bbox": [
+            713.0,
+            888.38,
+            769.0,
+            905.0
+          ],
+          "font": "",
+          "size": 13.54,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "移动方式",
+          "bbox": [
+            52.0,
+            927.37,
+            110.0,
+            944.0
+          ],
+          "font": "",
+          "size": 13.58,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "固定桌面",
+          "bbox": [
+            223.0,
+            926.31,
+            283.0,
+            943.0
+          ],
+          "font": "",
+          "size": 14.05,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "轮式移动",
+          "bbox": [
+            380.0,
+            927.31,
+            440.0,
+            944.0
+          ],
+          "font": "",
+          "size": 14.05,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "轮式移动/电梯",
+          "bbox": [
+            529.0,
+            927.48,
+            634.0,
+            945.0
+          ],
+          "font": "",
+          "size": 12.68,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "按需定制",
+          "bbox": [
+            713.0,
+            927.38,
+            769.0,
+            944.0
+          ],
+          "font": "",
+          "size": 13.54,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "续航时间",
+          "bbox": [
+            52.0,
+            966.37,
+            110.0,
+            983.0
+          ],
+          "font": "",
+          "size": 13.58,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "6小时",
+          "bbox": [
+            232.0,
+            966.86,
+            274.0,
+            983.0
+          ],
+          "font": "",
+          "size": 9.47,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "8-10小时",
+          "bbox": [
+            375.0,
+            966.86,
+            445.0,
+            983.0
+          ],
+          "font": "",
+          "size": 9.47,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "8-12小时",
+          "bbox": [
+            546.0,
+            966.86,
+            616.0,
+            983.0
+          ],
+          "font": "",
+          "size": 9.47,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "按需定制",
+          "bbox": [
+            713.0,
+            967.43,
+            769.0,
+            983.0
+          ],
+          "font": "",
+          "size": 13.05,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "网络连接",
+          "bbox": [
+            51.0,
+            1001.2,
+            112.0,
+            1024.0
+          ],
+          "font": "",
+          "size": 15.01,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "Wi-Fi/蓝牙",
+          "bbox": [
+            213.0,
+            1004.12,
+            292.0,
+            1022.0
+          ],
+          "font": "",
+          "size": 7.37,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "Wi-Fi/蓝牙",
+          "bbox": [
+            370.0,
+            1005.12,
+            450.0,
+            1022.0
+          ],
+          "font": "",
+          "size": 7.37,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "Wi-Fi/蓝牙",
+          "bbox": [
+            541.0,
+            1005.12,
+            621.0,
+            1022.0
+          ],
+          "font": "",
+          "size": 7.37,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "按需定制",
+          "bbox": [
+            713.0,
+            1004.38,
+            769.0,
+            1020.0
+          ],
+          "font": "",
+          "size": 13.54,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "适用场景",
+          "bbox": [
+            52.0,
+            1042.37,
+            110.0,
+            1059.0
+          ],
+          "font": "",
+          "size": 13.58,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "家庭/个人展厅/商业/教育政务/医疗/金融",
+          "bbox": [
+            216.0,
+            1042.23,
+            642.0,
+            1062.0
+          ],
+          "font": "",
+          "size": 14.74,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "按需定制",
+          "bbox": [
+            713.0,
+            1044.43,
+            769.0,
+            1060.0
+          ],
+          "font": "",
+          "size": 13.11,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "Zhengzhou LaiaoteTechnology Co,Ld.|柯幻熊猫·Al智能体",
+          "bbox": [
+            55.0,
+            1158.08,
+            477.0,
+            1177.0
+          ],
+          "font": "",
+          "size": 16.03,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "5",
+          "bbox": [
+            788.0,
+            1165.02,
+            797.0,
+            1180.0
+          ],
+          "font": "",
+          "size": 16.36,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.0,
+            0.0,
+            852.0,
+            1212.0
+          ],
+          "pixel": [
+            852,
+            1212
+          ],
+          "format": "jpeg",
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "width": 852.0,
+      "height": 1212.0,
+      "ocr": true,
+      "text_lines": 38,
+      "text_chars": 329,
+      "images": 1,
+      "shapes": 0,
+      "tables": 0,
+      "art_layers": 0,
+      "elements": [
+        {
+          "type": "text",
+          "text": "郑州莱奥特科技",
+          "bbox": [
+            109.0,
+            30.51,
+            261.0,
+            55.0
+          ],
+          "font": "",
+          "size": 20.77,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "柯幻熊猫·AI智能体",
+          "bbox": [
+            634.0,
+            32.01,
+            797.0,
+            51.0
+          ],
+          "font": "",
+          "size": 16.62,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "P16丨合作伙伴·Logo墙",
+          "bbox": [
+            49.0,
+            105.51,
+            290.0,
+            134.0
+          ],
+          "font": "",
+          "size": 20.76,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "合作伙伴·Logo墙",
+          "bbox": [
+            50.0,
+            157.56,
+            491.0,
+            221.0
+          ],
+          "font": "",
+          "size": 53.68,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "携手行业领先伙伴，共建AI智能新生态",
+          "bbox": [
+            49.0,
+            232.13,
+            497.0,
+            261.0
+          ],
+          "font": "",
+          "size": 23.92,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "-阿里云",
+          "bbox": [
+            229.0,
+            350.84,
+            364.0,
+            385.0
+          ],
+          "font": "",
+          "size": 26.32,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "腾讯云",
+          "bbox": [
+            466.0,
+            352.99,
+            544.0,
+            383.0
+          ],
+          "font": "",
+          "size": 25.08,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "战略合作",
+          "bbox": [
+            677.0,
+            355.62,
+            760.0,
+            379.0
+          ],
+          "font": "",
+          "size": 19.81,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "HUAWEI",
+          "bbox": [
+            81.0,
+            393.89,
+            150.0,
+            409.0
+          ],
+          "font": "",
+          "size": 18.55,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "共建AI产业生态",
+          "bbox": [
+            677.0,
+            390.28,
+            796.0,
+            408.0
+          ],
+          "font": "",
+          "size": 14.29,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "商汤",
+          "bbox": [
+            304.0,
+            469.19,
+            358.0,
+            498.0
+          ],
+          "font": "",
+          "size": 23.44,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "科大讯飞",
+          "bbox": [
+            459.0,
+            471.39,
+            546.0,
+            498.0
+          ],
+          "font": "",
+          "size": 21.75,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "百度智能云",
+          "bbox": [
+            57.0,
+            499.17,
+            175.0,
+            529.0
+          ],
+          "font": "",
+          "size": 23.6,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "sensetime",
+          "bbox": [
+            304.0,
+            498.31,
+            358.0,
+            509.0
+          ],
+          "font": "",
+          "size": 11.54,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "iFLYTEK",
+          "bbox": [
+            462.0,
+            497.97,
+            543.0,
+            511.0
+          ],
+          "font": "",
+          "size": 17.14,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "技术共创",
+          "bbox": [
+            676.0,
+            517.59,
+            759.0,
+            544.0
+          ],
+          "font": "",
+          "size": 20.12,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "联合研发创新",
+          "bbox": [
+            676.0,
+            557.07,
+            778.0,
+            575.0
+          ],
+          "font": "",
+          "size": 16.05,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "学节跳动",
+          "bbox": [
+            98.0,
+            608.49,
+            183.0,
+            633.0
+          ],
+          "font": "",
+          "size": 20.94,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "京东",
+          "bbox": [
+            289.0,
+            603.09,
+            356.0,
+            635.0
+          ],
+          "font": "",
+          "size": 32.56,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "中国移动",
+          "bbox": [
+            465.0,
+            596.65,
+            547.0,
+            619.0
+          ],
+          "font": "",
+          "size": 19.59,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "场景落地",
+          "bbox": [
+            674.0,
+            683.33,
+            763.0,
+            714.0
+          ],
+          "font": "",
+          "size": 22.25,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "中国电信",
+          "bbox": [
+            102.0,
+            719.76,
+            184.0,
+            749.0
+          ],
+          "font": "",
+          "size": 18.64,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "中国联通",
+          "bbox": [
+            288.0,
+            720.51,
+            371.0,
+            747.0
+          ],
+          "font": "",
+          "size": 20.75,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "中国银行",
+          "bbox": [
+            459.0,
+            717.73,
+            545.0,
+            744.0
+          ],
+          "font": "",
+          "size": 18.93,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "行业解决方案",
+          "bbox": [
+            677.0,
+            722.07,
+            779.0,
+            741.0
+          ],
+          "font": "",
+          "size": 16.05,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "CHINATELECOM",
+          "bbox": [
+            102.0,
+            749.34,
+            184.0,
+            758.0
+          ],
+          "font": "",
+          "size": 11.02,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "Chinaunicom",
+          "bbox": [
+            289.0,
+            744.2,
+            367.0,
+            757.0
+          ],
+          "font": "",
+          "size": 13.4,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "BANKOF CHINA",
+          "bbox": [
+            460.0,
+            747.33,
+            544.0,
+            756.0
+          ],
+          "font": "",
+          "size": 11.11,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "招商银行平安银行",
+          "bbox": [
+            273.0,
+            838.35,
+            539.0,
+            872.0
+          ],
+          "font": "",
+          "size": 22.11,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "生态互联",
+          "bbox": [
+            677.0,
+            849.62,
+            760.0,
+            874.0
+          ],
+          "font": "",
+          "size": 19.81,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "中国建设银行",
+          "bbox": [
+            53.0,
+            869.44,
+            181.0,
+            892.0
+          ],
+          "font": "",
+          "size": 21.33,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "QIK CNTAPINGANBANK",
+          "bbox": [
+            273.0,
+            872.92,
+            536.0,
+            887.0
+          ],
+          "font": "",
+          "size": 18.06,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "China Constructon Bank",
+          "bbox": [
+            63.0,
+            889.43,
+            170.0,
+            899.0
+          ],
+          "font": "",
+          "size": 9.5,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "开放平台合作",
+          "bbox": [
+            677.0,
+            887.18,
+            779.0,
+            906.0
+          ],
+          "font": "",
+          "size": 15.2,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "Vivo oppo美的 Midea",
+          "bbox": [
+            67.0,
+            970.34,
+            546.0,
+            1019.0
+          ],
+          "font": "",
+          "size": 30.53,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "共赢发展",
+          "bbox": [
+            674.0,
+            1004.33,
+            763.0,
+            1035.0
+          ],
+          "font": "",
+          "size": 22.25,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "携手创造更大价值",
+          "bbox": [
+            677.0,
+            1042.19,
+            805.0,
+            1060.0
+          ],
+          "font": "",
+          "size": 15.05,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "Zhengzhou Lai'aoteTechnology Co,Ltd.|柯幻熊猫·Al 智能体",
+          "bbox": [
+            53.0,
+            1158.16,
+            474.0,
+            1177.0
+          ],
+          "font": "",
+          "size": 15.31,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.0,
+            0.0,
+            852.0,
+            1212.0
+          ],
+          "pixel": [
+            852,
+            1212
+          ],
+          "format": "jpeg",
+          "alpha": false
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "width": 852.0,
+      "height": 1212.0,
+      "ocr": true,
+      "text_lines": 18,
+      "text_chars": 181,
+      "images": 1,
+      "shapes": 0,
+      "tables": 0,
+      "art_layers": 0,
+      "elements": [
+        {
+          "type": "text",
+          "text": "建筑更美好的城市生活",
+          "bbox": [
+            72.0,
+            110.8,
+            420.0,
+            133.0
+          ],
+          "font": "",
+          "size": 18.32,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "BUILD A BETTER",
+          "bbox": [
+            72.0,
+            150.08,
+            226.0,
+            162.0
+          ],
+          "font": "",
+          "size": 15.28,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "URBAN LIFE",
+          "bbox": [
+            71.0,
+            169.0,
+            178.0,
+            182.0
+          ],
+          "font": "",
+          "size": 16.67,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "城市",
+          "bbox": [
+            606.0,
+            405.81,
+            654.0,
+            428.0
+          ],
+          "font": "",
+          "size": 18.23,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "建筑",
+          "bbox": [
+            607.0,
+            443.88,
+            654.0,
+            466.0
+          ],
+          "font": "",
+          "size": 17.64,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "人居",
+          "bbox": [
+            607.0,
+            482.96,
+            654.0,
+            506.0
+          ],
+          "font": "",
+          "size": 17.03,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "未来",
+          "bbox": [
+            607.0,
+            521.88,
+            654.0,
+            545.0
+          ],
+          "font": "",
+          "size": 17.64,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "CITY",
+          "bbox": [
+            607.0,
+            612.15,
+            642.0,
+            624.0
+          ],
+          "font": "",
+          "size": 14.11,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "CONSTRUCTION",
+          "bbox": [
+            607.0,
+            636.08,
+            734.0,
+            648.0
+          ],
+          "font": "",
+          "size": 15.28,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "HABITAT",
+          "bbox": [
+            607.0,
+            659.08,
+            674.0,
+            671.0
+          ],
+          "font": "",
+          "size": 15.28,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "FUTURE",
+          "bbox": [
+            607.0,
+            682.08,
+            668.0,
+            694.0
+          ],
+          "font": "",
+          "size": 15.28,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "宏远建设有限公司",
+          "bbox": [
+            72.0,
+            935.67,
+            294.0,
+            966.0
+          ],
+          "font": "",
+          "size": 27.75,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "HONGYUAN CONSTRUCTION CO.,LTD.",
+          "bbox": [
+            72.0,
+            973.97,
+            367.0,
+            989.0
+          ],
+          "font": "",
+          "size": 17.15,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "400-888-1234info@hongyuan.com",
+          "bbox": [
+            110.0,
+            1013.48,
+            486.0,
+            1038.0
+          ],
+          "font": "",
+          "size": 25.37,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "中国·北京市朝阳区未来科技城创新路8号",
+          "bbox": [
+            110.0,
+            1050.19,
+            434.0,
+            1068.0
+          ],
+          "font": "",
+          "size": 15.04,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "关注我们",
+          "bbox": [
+            695.0,
+            1063.6,
+            762.0,
+            1077.0
+          ],
+          "font": "",
+          "size": 11.64,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "www.hongyuan.com",
+          "bbox": [
+            110.0,
+            1086.7,
+            284.0,
+            1105.0
+          ],
+          "font": "",
+          "size": 21.64,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "了解更多",
+          "bbox": [
+            695.0,
+            1081.66,
+            761.0,
+            1096.0
+          ],
+          "font": "",
+          "size": 11.19,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "image",
+          "bbox": [
+            0.0,
+            0.0,
+            852.0,
+            1212.0
+          ],
+          "pixel": [
+            852,
+            1212
+          ],
+          "format": "jpeg",
+          "alpha": false
+        }
+      ]
+    }
+  ]
+}

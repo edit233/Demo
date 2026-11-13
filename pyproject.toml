@@ -1,0 +1,19 @@
+[project]
+name = "pdf2pptx-service"
+version = "1.0.0"
+description = "PDF 转换为可编辑 PPTX 的 Web 服务"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.162.5",
+    "uvicorn[standard]>=0.54.0",
+    "python-multipart>=0.0.20",
+    "pymupdf>=1.24.3",
+    "python-pptx>=1.0.2",
+    "pillow>=11.0.0",
+    "numpy>=2.0.0",
+    "rapidocr-onnxruntime>=1.4.0",
+]
+
+[[tool.uv.index]]
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+default = true
