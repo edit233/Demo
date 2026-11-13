@@ -155,6 +155,46 @@ def run_checks(
         else:
             print("   OCR 开关已生效")
 
+    print("8) 请求级开关是否生效（关闭图层分解后不应出现独立图片对象）")
+    if materials:
+        payload, content_type = _multipart(
+            [(materials[0].name, materials[0].read_bytes())], {"enable_layering": "0"}
+        )
+        status, body, _ = _request(
+            f"{base}/api/convert", "POST", payload, {"Content-Type": content_type}
+        )
+        payload_json = json.loads(body)
+        stats = payload_json["files"][0]["stats"] if payload_json["files"] else {}
+        print(
+            f"   enable_layering=0：已分解 {stats.get('decomposed_pages')} 页 / "
+            f"整页图 {stats.get('full_page_image_pages')} 页 / 图片 {stats.get('images')} 个"
+        )
+        if stats.get("decomposed_pages") != 0:
+            print("   图层分解开关未生效")
+            failures += 1
+        else:
+            print("   图层分解开关已生效")
+
+    print("9) 请求级开关是否生效（开启图层分解后应出现独立图片对象）")
+    if materials:
+        payload, content_type = _multipart(
+            [(materials[0].name, materials[0].read_bytes())], {"enable_layering": "1"}
+        )
+        status, body, _ = _request(
+            f"{base}/api/convert", "POST", payload, {"Content-Type": content_type}
+        )
+        payload_json = json.loads(body)
+        stats = payload_json["files"][0]["stats"] if payload_json["files"] else {}
+        print(
+            f"   enable_layering=1：已分解 {stats.get('decomposed_pages')} 页 / "
+            f"整页图 {stats.get('full_page_image_pages')} 页 / 图片 {stats.get('images')} 个"
+        )
+        if not stats.get("decomposed_pages"):
+            print("   图层分解未生效")
+            failures += 1
+        else:
+            print("   图层分解已生效")
+
     print()
     print("端到端验证：" + ("全部通过" if failures == 0 else f"存在 {failures} 处失败"))
     return failures

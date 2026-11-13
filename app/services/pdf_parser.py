@@ -72,6 +72,8 @@ class ImageElement:
     pixel_width: int
     pixel_height: int
     alpha: bool = False
+    #: 图片类型：pdf / background / photo / illustration / logo / graphic
+    kind: str = "pdf"
 
 
 @dataclass
@@ -84,6 +86,7 @@ class ShapeElement:
     * ``line``：直线，可还原为 PPT 连接符
     * ``ellipse``：椭圆，可还原为 PPT 椭圆自选图形
     * ``complex``：复杂路径，无法结构化，保留为图片对象
+    * ``freeform``：多边形自由曲线，可还原为 PPT 自由曲线
     """
 
     kind: str
@@ -96,6 +99,8 @@ class ShapeElement:
     fill_opacity: float = 1.0
     stroke_opacity: float = 1.0
     dashed: bool = False
+    #: 自由曲线的顶点（页面坐标）；仅 ``kind == "freeform"`` 时有值
+    points: list[tuple[float, float]] = field(default_factory=list)
 
 
 @dataclass

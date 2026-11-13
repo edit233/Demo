@@ -246,19 +246,22 @@ class PptxBuilder:
         # 1) 整页底色（置于最底层）
         for shape in backgrounds:
             self._add_shape(slide, shape, transform)
-        # 2) 复杂矢量层（透明 PNG）
+        # 2) 重建后的背景位图（图层分解产生）
+        if model.background is not None:
+            self._add_picture(slide, model.background, transform)
+        # 3) 复杂矢量层（透明 PNG）
         if self.keep_art_layer and art_png and model.art_rect:
             self._add_art_layer(slide, model.art_rect, art_png, transform)
-        # 3) 其它矢量图形
+        # 4) 其它矢量图形（卡片 / 线条 / 自由曲线）
         for shape in others:
             self._add_shape(slide, shape, transform)
-        # 4) 图片
+        # 5) 图片对象（独立可选中、移动、缩放）
         for image in model.images:
             self._add_picture(slide, image, transform)
-        # 5) 表格
+        # 6) 表格
         for table in model.tables:
             self._add_table(slide, table, transform)
-        # 6) 文本
+        # 7) 文本
         for line in model.texts:
             self._add_text(slide, line, transform)
 
@@ -284,6 +287,10 @@ class PptxBuilder:
                     pass
             _apply_alpha(connector._element.spPr, shape.stroke_opacity)
             _disable_shadow(connector)
+            return
+
+        if shape.kind == "freeform" and len(shape.points) >= 3:
+            self._add_freeform(slide, shape, transform)
             return
 
         left = int(transform.x(_emu(shape.rect[0])))
@@ -322,6 +329,32 @@ class PptxBuilder:
         _disable_shadow(auto_shape)
 
     # ------------------------------------------------------------------ 图片
+    def _add_freeform(self, slide, shape: ShapeElement, transform: _Transform) -> None:
+        """把多边形还原为 PPT 原生自由曲线。"""
+        points = [(float(px), float(py)) for px, py in shape.points]
+        try:
+            builder = slide.shapes.build_freeform(
+                points[0][0], points[0][1], scale=transform.scale * EMU_PER_POINT
+            )
+            builder.add_line_segments(points[1:], close=True)
+            freeform = builder.convert_to_shape(
+                int(transform.offset_x), int(transform.offset_y)
+            )
+        except Exception:
+            return
+        if shape.fill:
+            freeform.fill.solid()
+            freeform.fill.fore_color.rgb = _rgb(_scaled_color(shape.fill))
+        else:
+            freeform.fill.background()
+        if shape.color:
+            freeform.line.color.rgb = _rgb(_scaled_color(shape.color))
+            freeform.line.width = Pt(max(0.25, shape.width * transform.scale))
+        else:
+            freeform.line.fill.background()
+        _apply_alpha(freeform._element.spPr, shape.fill_opacity)
+        _disable_shadow(freeform)
+
     def _add_picture(self, slide, image: ImageElement, transform: _Transform) -> None:
         left = int(transform.x(_emu(image.rect[0])))
         top = int(transform.y(_emu(image.rect[1])))

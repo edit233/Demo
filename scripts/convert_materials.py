@@ -5,6 +5,7 @@
     python scripts/convert_materials.py                 # 转换全部素材
     python scripts/convert_materials.py 测试1.pdf       # 只转换指定文件
     python scripts/convert_materials.py --no-ocr       # 关闭 OCR（仅结构化路径）
+    python scripts/convert_materials.py --no-layer     # 关闭图层分解
 
 每个素材输出：
     outputs/<素材名>/<素材名>.pptx   转换结果
@@ -32,6 +33,9 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="批量转换 PDF 测试素材")
     parser.add_argument("names", nargs="*", help="要转换的文件名（可省略，默认全部）")
     parser.add_argument("--no-ocr", action="store_true", help="关闭 OCR 文字还原")
+    parser.add_argument(
+        "--no-layer", action="store_true", help="关闭图层分解（整页位图不拆分为独立对象）"
+    )
     parser.add_argument("--min-confidence", type=float, default=0.5, help="OCR 置信度阈值")
     parser.add_argument("--output", default=str(OUTPUT_ROOT), help="输出根目录")
     args = parser.parse_args()
@@ -51,6 +55,7 @@ def main() -> int:
     options = ConvertOptions(
         enable_ocr=not args.no_ocr,
         ocr_min_confidence=args.min_confidence,
+        enable_layering=not args.no_layer,
     )
     output_root = Path(args.output)
     summary: list[dict] = []
@@ -71,6 +76,9 @@ def main() -> int:
             f"  完成：{result.output_path.name}  用时 {elapsed:.1f}s  "
             f"页数 {result.report['page_count']}  "
             f"文本行 {info['text_lines']}  图片 {info['images']}  "
+            f"图形 {info['shapes']}  "
+            f"已分解 {info['decomposed_pages']}/{result.report['page_count']} 页  "
+            f"整页图 {info['full_page_image_pages']} 页  "
             f"可编辑对象 {info['editable_objects']}  "
             f"可编辑占比 {info['editable_ratio']:.2%}"
         )

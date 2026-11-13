@@ -14,6 +14,7 @@ from fastapi.responses import FileResponse, JSONResponse
 from app.core.config import settings
 from app.models.schemas import ConvertedFile, ConvertFileStat, ConvertResponse
 from app.services.converter import ConversionError, ConvertOptions, convert_pdf
+from app.services.layering import LayeringOptions
 
 router = APIRouter(prefix="/api", tags=["转换"])
 
@@ -49,6 +50,9 @@ async def convert(
     keep_art_layer: bool | None = Form(None, description="是否保留复杂矢量为独立图片层"),
     detect_tables: bool | None = Form(None, description="是否检测并还原表格"),
     enable_ocr: bool | None = Form(None, description="是否对图片型页面启用 OCR 文字还原"),
+    enable_layering: bool | None = Form(
+        None, description="是否把整页位图拆成背景 + 独立图片对象 + 原生形状"
+    ),
 ):
     """上传一个或多个 PDF，返回转换结果与下载地址。
 
@@ -99,6 +103,15 @@ async def convert(
             enable_ocr=(settings.enable_ocr if enable_ocr is None else enable_ocr),
             ocr_min_confidence=settings.ocr_min_confidence,
             ocr_erase_text=settings.ocr_erase_text,
+            enable_layering=(
+                settings.enable_layering if enable_layering is None else enable_layering
+            ),
+            layering=LayeringOptions(
+                texture_threshold=settings.layer_texture_threshold,
+                min_area_ratio=settings.layer_min_area_ratio,
+                max_regions=settings.layer_max_regions,
+                rebuild_background=settings.layer_rebuild_background,
+            ),
         )
         try:
             result = await asyncio.to_thread(
@@ -128,6 +141,9 @@ async def convert(
                     tables=summary.get("tables", 0),
                     art_layers=summary.get("art_layers", 0),
                     editable_ratio=summary.get("editable_ratio", 0.0),
+                    background_layers=summary.get("background_layers", 0),
+                    decomposed_pages=summary.get("decomposed_pages", 0),
+                    full_page_image_pages=summary.get("full_page_image_pages", 0),
                 ),
             )
         )

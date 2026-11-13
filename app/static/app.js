@@ -16,6 +16,7 @@ const el = {
   optOcr: document.getElementById("opt-ocr"),
   optArt: document.getElementById("opt-art"),
   optTables: document.getElementById("opt-tables"),
+  optLayering: document.getElementById("opt-layering"),
   maxSize: document.getElementById("max-size"),
   dialog: document.getElementById("detail-dialog"),
   dialogTitle: document.getElementById("detail-title"),
@@ -73,6 +74,24 @@ function escapeHtml(text) {
   }[ch]));
 }
 
+const IMAGE_KIND_LABELS = {
+  complex_vector_layer: "复杂矢量路径（独立图片对象）",
+  background: "重建背景层",
+  photo: "独立照片对象",
+  illustration: "独立插画对象",
+  logo: "独立标识对象",
+  graphic: "独立图形对象",
+  pdf: "PDF 内嵌位图",
+};
+
+const SHAPE_KIND_LABELS = {
+  rect: "矩形",
+  line: "直线（连接符）",
+  ellipse: "椭圆",
+  freeform: "自由曲线（斜切多边形）",
+  complex: "复杂矢量",
+};
+
 function showErrors(messages) {
   el.errors.innerHTML = messages.map((msg) => `<p>${escapeHtml(msg)}</p>`).join("");
 }
@@ -90,6 +109,7 @@ async function convert() {
   form.append("enable_ocr", el.optOcr.checked ? "1" : "0");
   form.append("keep_art_layer", el.optArt.checked ? "1" : "0");
   form.append("detect_tables", el.optTables.checked ? "1" : "0");
+  form.append("enable_layering", el.optLayering.checked ? "1" : "0");
 
   try {
     const response = await fetch("/api/convert", { method: "POST", body: form });
@@ -128,6 +148,9 @@ function renderResults(payload) {
         <span class="chip">图片 ${stats.images}</span>
         <span class="chip">图形 ${stats.shapes}</span>
         <span class="chip">表格 ${stats.tables}</span>
+        ${stats.background_layers ? `<span class="chip">背景层 ${stats.background_layers}</span>` : ""}
+        ${stats.decomposed_pages ? `<span class="chip">已分解 ${stats.decomposed_pages}/${stats.page_count} 页</span>` : ""}
+        ${stats.full_page_image_pages ? `<span class="chip warn">整页图 ${stats.full_page_image_pages} 页</span>` : ""}
         ${stats.art_layers ? `<span class="chip gray">复杂图形 ${stats.art_layers} 层</span>` : ""}
       </div>
       <div class="ratio">
@@ -168,6 +191,9 @@ function renderReport(report) {
       <span class="chip">图片 ${summary.images}</span>
       <span class="chip">图形 ${summary.shapes}</span>
       <span class="chip">表格 ${summary.tables}</span>
+      ${summary.background_layers ? `<span class="chip">背景层 ${summary.background_layers}</span>` : ""}
+      ${summary.decomposed_pages ? `<span class="chip">已分解 ${summary.decomposed_pages}/${report.page_count} 页</span>` : ""}
+      ${summary.full_page_image_pages ? `<span class="chip warn">整页图 ${summary.full_page_image_pages} 页</span>` : ""}
       <span class="chip gray">复杂图形 ${summary.art_layers} 层</span>
     </div>`;
 
@@ -181,11 +207,9 @@ function renderReport(report) {
       if (item.type === "text") {
         detail = `文本「${escapeHtml(item.text)}」 · ${escapeHtml(item.font)} ${item.size}pt${item.bold ? " · 加粗" : ""}`;
       } else if (item.type === "image") {
-        detail = item.kind === "complex_vector_layer"
-          ? "复杂矢量路径（独立图片对象）"
-          : `位图 ${(item.pixel || []).join("×")} · ${(item.format || "").toUpperCase()}`;
+        detail = IMAGE_KIND_LABELS[item.kind] || `位图 ${(item.pixel || []).join("×")} · ${(item.format || "").toUpperCase()}`;
       } else if (item.type === "shape") {
-        detail = `${item.kind} · 填充 ${item.fill || "无"} · 描边 ${item.stroke || "无"}`;
+        detail = `${SHAPE_KIND_LABELS[item.kind] || item.kind} · 填充 ${item.fill || "无"} · 描边 ${item.stroke || "无"}`;
       } else if (item.type === "table") {
         detail = `表格 ${item.rows} 行 × ${item.cols} 列`;
       }

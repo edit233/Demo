@@ -54,6 +54,16 @@ class Settings:
     enable_ocr: bool = _env_bool("PDF2PPTX_ENABLE_OCR", True)
     ocr_min_confidence: float = _env_float("PDF2PPTX_OCR_MIN_CONFIDENCE", 0.5)
     ocr_erase_text: bool = _env_bool("PDF2PPTX_OCR_ERASE_TEXT", True)
+    #: 是否把整页位图拆成「背景 + 独立图片对象 + 原生形状」
+    enable_layering: bool = _env_bool("PDF2PPTX_ENABLE_LAYERING", True)
+    #: 图层分解：纹理能量阈值（局部标准差）
+    layer_texture_threshold: float = _env_float("PDF2PPTX_LAYER_TEXTURE_THRESHOLD", 9.0)
+    #: 图层分解：图片区域最小面积占页面比例
+    layer_min_area_ratio: float = _env_float("PDF2PPTX_LAYER_MIN_AREA_RATIO", 0.0015)
+    #: 图层分解：单页最多拆出的图片对象数
+    layer_max_regions: int = _env_int("PDF2PPTX_LAYER_MAX_REGIONS", 36)
+    #: 图层分解：是否把背景重建为整页图（关闭则背景只保留纯色矩形与原生形状）
+    layer_rebuild_background: bool = _env_bool("PDF2PPTX_LAYER_REBUILD_BACKGROUND", True)
     allowed_origins: tuple[str, ...] = tuple(
         item.strip()
         for item in _env_str("PDF2PPTX_ALLOWED_ORIGINS", "*").split(",")

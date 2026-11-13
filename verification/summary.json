@@ -1,89 +1,105 @@
 {
   "测试1": {
     "object_totals": {
-      "图片": 10,
-      "文本框": 299
+      "图片": 117,
+      "FREEFORM (5)": 2,
+      "连接符": 9,
+      "文本框": 257,
+      "形状": 17
     },
     "stats": {
       "slides": 10,
       "objects": {
-        "图片": 10,
-        "文本框": 299
+        "图片": 117,
+        "FREEFORM (5)": 2,
+        "连接符": 9,
+        "文本框": 257,
+        "形状": 17
       },
-      "editable_objects": 299,
-      "text_chars": 2931
+      "editable_objects": 285,
+      "text_chars": 2458
     },
     "ooxml": {
       "slides": 10,
-      "shape": 299,
-      "picture": 10,
-      "connector": 0,
+      "shape": 276,
+      "picture": 117,
+      "connector": 9,
       "graphic_frame": 0,
       "table": 0,
-      "text_run": 299
+      "text_run": 257
     },
     "area": {
       "full_bleed_pages": [],
-      "min_objects": 10,
-      "max_objects": 63
+      "min_objects": 15,
+      "max_objects": 75
     }
   },
   "测试2": {
     "object_totals": {
-      "图片": 10,
-      "文本框": 195
+      "图片": 91,
+      "文本框": 161,
+      "FREEFORM (5)": 1,
+      "连接符": 19,
+      "形状": 12
     },
     "stats": {
       "slides": 10,
       "objects": {
-        "图片": 10,
-        "文本框": 195
+        "图片": 91,
+        "文本框": 161,
+        "FREEFORM (5)": 1,
+        "连接符": 19,
+        "形状": 12
       },
-      "editable_objects": 195,
-      "text_chars": 2197
+      "editable_objects": 193,
+      "text_chars": 1868
     },
     "ooxml": {
       "slides": 10,
-      "shape": 195,
-      "picture": 10,
-      "connector": 0,
+      "shape": 174,
+      "picture": 91,
+      "connector": 19,
       "graphic_frame": 0,
       "table": 0,
-      "text_run": 195
+      "text_run": 161
     },
     "area": {
       "full_bleed_pages": [],
-      "min_objects": 3,
-      "max_objects": 30
+      "min_objects": 6,
+      "max_objects": 47
     }
   },
   "测试3": {
     "object_totals": {
-      "图片": 10,
-      "文本框": 151
+      "图片": 51,
+      "连接符": 5,
+      "文本框": 134,
+      "形状": 6
     },
     "stats": {
       "slides": 10,
       "objects": {
-        "图片": 10,
-        "文本框": 151
+        "图片": 51,
+        "连接符": 5,
+        "文本框": 134,
+        "形状": 6
       },
-      "editable_objects": 151,
-      "text_chars": 1473
+      "editable_objects": 145,
+      "text_chars": 1335
     },
     "ooxml": {
       "slides": 10,
-      "shape": 151,
-      "picture": 10,
-      "connector": 0,
+      "shape": 140,
+      "picture": 51,
+      "connector": 5,
       "graphic_frame": 0,
       "table": 0,
-      "text_run": 151
+      "text_run": 134
     },
     "area": {
       "full_bleed_pages": [],
-      "min_objects": 3,
-      "max_objects": 30
+      "min_objects": 8,
+      "max_objects": 32
     }
   }
 }

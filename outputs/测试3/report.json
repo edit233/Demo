@@ -2,15 +2,110 @@
   "source_name": "测试3.pdf",
   "page_count": 10,
   "summary": {
-    "text_lines": 151,
-    "text_chars": 1473,
-    "images": 10,
-    "shapes": 0,
+    "text_lines": 134,
+    "text_chars": 1335,
+    "images": 43,
+    "shapes": 11,
     "tables": 0,
     "art_layers": 0,
-    "editable_objects": 161,
-    "editable_ratio": 1.0
+    "background_layers": 8,
+    "editable_objects": 188,
+    "editable_ratio": 1.0,
+    "decomposed_pages": 9,
+    "full_page_image_pages": 0
   },
+  "layering": [
+    {
+      "page": 1,
+      "regions": 3,
+      "shapes": 3,
+      "lines": 3,
+      "image_coverage": 0.3964,
+      "flat_background": false,
+      "artwork_text": 0,
+      "background_text": 2
+    },
+    {
+      "page": 2,
+      "regions": 3,
+      "shapes": 1,
+      "lines": 1,
+      "image_coverage": 0.3794,
+      "flat_background": false,
+      "artwork_text": 1,
+      "background_text": 9
+    },
+    {
+      "page": 3,
+      "regions": 3,
+      "shapes": 0,
+      "lines": 0,
+      "image_coverage": 0.0244,
+      "flat_background": true,
+      "artwork_text": 2,
+      "background_text": 10
+    },
+    {
+      "page": 4,
+      "regions": 5,
+      "shapes": 1,
+      "lines": 1,
+      "image_coverage": 0.0264,
+      "flat_background": false,
+      "artwork_text": 0,
+      "background_text": 22
+    },
+    {
+      "page": 5,
+      "regions": 2,
+      "shapes": 0,
+      "lines": 0,
+      "image_coverage": 0.0129,
+      "flat_background": false,
+      "artwork_text": 0,
+      "background_text": 20
+    },
+    {
+      "page": 6,
+      "regions": 10,
+      "shapes": 4,
+      "lines": 0,
+      "image_coverage": 0.086,
+      "flat_background": false,
+      "artwork_text": 0,
+      "background_text": 17
+    },
+    {
+      "page": 7,
+      "regions": 6,
+      "shapes": 0,
+      "lines": 0,
+      "image_coverage": 0.1859,
+      "flat_background": false,
+      "artwork_text": 0,
+      "background_text": 16
+    },
+    {
+      "page": 8,
+      "regions": 7,
+      "shapes": 0,
+      "lines": 0,
+      "image_coverage": 0.0993,
+      "flat_background": true,
+      "artwork_text": 16,
+      "background_text": 15
+    },
+    {
+      "page": 9,
+      "regions": 3,
+      "shapes": 0,
+      "lines": 0,
+      "image_coverage": 0.2364,
+      "flat_background": false,
+      "artwork_text": 2,
+      "background_text": 17
+    }
+  ],
   "pages": [
     {
       "index": 1,
@@ -19,10 +114,12 @@
       "ocr": true,
       "text_lines": 2,
       "text_chars": 16,
-      "images": 1,
-      "shapes": 0,
+      "images": 3,
+      "shapes": 3,
       "tables": 0,
       "art_layers": 0,
+      "background_layers": 1,
+      "full_page_image": false,
       "elements": [
         {
           "type": "text",
@@ -56,18 +153,90 @@
         },
         {
           "type": "image",
+          "kind": "illustration",
           "bbox": [
-            0.0,
-            0.0,
-            852.0,
-            1212.0
+            5.0,
+            221.0,
+            847.0,
+            1207.0
           ],
           "pixel": [
-            852,
-            1212
+            842,
+            986
           ],
-          "format": "jpeg",
-          "alpha": false
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "logo",
+          "bbox": [
+            563.0,
+            647.0,
+            689.0,
+            771.0
+          ],
+          "pixel": [
+            126,
+            124
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "photo",
+          "bbox": [
+            76.0,
+            90.0,
+            244.0,
+            160.0
+          ],
+          "pixel": [
+            168,
+            70
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "shape",
+          "kind": "line",
+          "bbox": [
+            706.0,
+            288.0,
+            707.0,
+            307.0
+          ],
+          "fill": null,
+          "stroke": "#002762"
+        },
+        {
+          "type": "shape",
+          "kind": "line",
+          "bbox": [
+            313.0,
+            1054.0,
+            315.0,
+            1074.0
+          ],
+          "fill": null,
+          "stroke": "#003271"
+        },
+        {
+          "type": "shape",
+          "kind": "line",
+          "bbox": [
+            661.0,
+            1186.0,
+            662.0,
+            1207.0
+          ],
+          "fill": null,
+          "stroke": "#001847"
         }
       ]
     },
@@ -76,12 +245,14 @@
       "width": 852.0,
       "height": 1212.0,
       "ocr": true,
-      "text_lines": 10,
-      "text_chars": 117,
-      "images": 1,
-      "shapes": 0,
+      "text_lines": 9,
+      "text_chars": 110,
+      "images": 3,
+      "shapes": 1,
       "tables": 0,
       "art_layers": 0,
+      "background_layers": 1,
+      "full_page_image": false,
       "elements": [
         {
           "type": "text",
@@ -205,21 +376,6 @@
         },
         {
           "type": "text",
-          "text": "郑州莱奥特科技",
-          "bbox": [
-            57.0,
-            1138.14,
-            172.0,
-            1156.0
-          ],
-          "font": "",
-          "size": 15.51,
-          "bold": false,
-          "italic": false,
-          "runs": 1
-        },
-        {
-          "type": "text",
           "text": "01",
           "bbox": [
             781.0,
@@ -235,18 +391,66 @@
         },
         {
           "type": "image",
+          "kind": "illustration",
           "bbox": [
-            0.0,
-            0.0,
-            852.0,
-            1212.0
+            5.0,
+            212.0,
+            847.0,
+            1110.0
           ],
           "pixel": [
-            852,
-            1212
+            842,
+            898
           ],
-          "format": "jpeg",
-          "alpha": false
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "logo",
+          "bbox": [
+            48.0,
+            36.0,
+            804.0,
+            97.0
+          ],
+          "pixel": [
+            756,
+            61
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "illustration",
+          "bbox": [
+            48.0,
+            1123.0,
+            804.0,
+            1159.0
+          ],
+          "pixel": [
+            756,
+            36
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "shape",
+          "kind": "line",
+          "bbox": [
+            459.0,
+            1035.0,
+            461.0,
+            1055.0
+          ],
+          "fill": null,
+          "stroke": "#EFFCFF"
         }
       ]
     },
@@ -255,12 +459,14 @@
       "width": 852.0,
       "height": 1212.0,
       "ocr": true,
-      "text_lines": 11,
-      "text_chars": 93,
-      "images": 1,
-      "shapes": 0,
+      "text_lines": 10,
+      "text_chars": 73,
+      "images": 3,
+      "shapes": 1,
       "tables": 0,
       "art_layers": 0,
+      "background_layers": 0,
+      "full_page_image": false,
       "elements": [
         {
           "type": "text",
@@ -324,15 +530,15 @@
         },
         {
           "type": "text",
-          "text": "0303应用场景与行业解决方案",
+          "text": "03",
           "bbox": [
             380.0,
-            389.98,
-            691.0,
-            417.0
+            397.91,
+            400.0,
+            415.0
           ],
           "font": "",
-          "size": 16.84,
+          "size": 18.18,
           "bold": false,
           "italic": false,
           "runs": 1
@@ -399,21 +605,6 @@
         },
         {
           "type": "text",
-          "text": "郑州莱奥特科技",
-          "bbox": [
-            57.0,
-            1138.09,
-            172.0,
-            1156.0
-          ],
-          "font": "",
-          "size": 15.95,
-          "bold": false,
-          "italic": false,
-          "runs": 1
-        },
-        {
-          "type": "text",
           "text": "02",
           "bbox": [
             780.0,
@@ -429,18 +620,66 @@
         },
         {
           "type": "image",
+          "kind": "logo",
+          "bbox": [
+            48.0,
+            36.0,
+            804.0,
+            97.0
+          ],
+          "pixel": [
+            756,
+            61
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "illustration",
+          "bbox": [
+            48.0,
+            1123.0,
+            803.0,
+            1159.0
+          ],
+          "pixel": [
+            755,
+            36
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "photo",
+          "bbox": [
+            500.0,
+            395.0,
+            767.0,
+            419.0
+          ],
+          "pixel": [
+            267,
+            24
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "shape",
+          "kind": "rect",
           "bbox": [
             0.0,
             0.0,
             852.0,
             1212.0
           ],
-          "pixel": [
-            852,
-            1212
-          ],
-          "format": "jpeg",
-          "alpha": false
+          "fill": "#FEFEFE",
+          "stroke": null
         }
       ]
     },
@@ -449,12 +688,14 @@
       "width": 852.0,
       "height": 1212.0,
       "ocr": true,
-      "text_lines": 21,
+      "text_lines": 22,
       "text_chars": 133,
-      "images": 1,
-      "shapes": 0,
+      "images": 5,
+      "shapes": 1,
       "tables": 0,
       "art_layers": 0,
+      "background_layers": 1,
+      "full_page_image": false,
       "elements": [
         {
           "type": "text",
@@ -638,15 +879,30 @@
         },
         {
           "type": "text",
-          "text": "构建多模态能力聚焦行业应用",
+          "text": "构建多模态能力",
           "bbox": [
             94.0,
-            495.85,
+            496.02,
+            216.0,
+            515.0
+          ],
+          "font": "",
+          "size": 16.51,
+          "bold": false,
+          "italic": false,
+          "runs": 1
+        },
+        {
+          "type": "text",
+          "text": "聚焦行业应用",
+          "bbox": [
+            273.0,
+            496.04,
             377.0,
             515.0
           ],
           "font": "",
-          "size": 17.89,
+          "size": 16.36,
           "bold": false,
           "italic": false,
           "runs": 1
@@ -773,18 +1029,100 @@
         },
         {
           "type": "image",
+          "kind": "logo",
           "bbox": [
-            0.0,
-            0.0,
-            852.0,
-            1212.0
+            46.0,
+            40.0,
+            808.0,
+            101.0
           ],
           "pixel": [
-            852,
-            1212
+            762,
+            61
           ],
-          "format": "jpeg",
-          "alpha": false
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "logo",
+          "bbox": [
+            65.0,
+            855.0,
+            480.0,
+            942.0
+          ],
+          "pixel": [
+            415,
+            87
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "logo",
+          "bbox": [
+            419.0,
+            757.0,
+            628.0,
+            913.0
+          ],
+          "pixel": [
+            209,
+            156
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "illustration",
+          "bbox": [
+            91.0,
+            374.0,
+            801.0,
+            404.0
+          ],
+          "pixel": [
+            710,
+            30
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "illustration",
+          "bbox": [
+            47.0,
+            1123.0,
+            758.0,
+            1138.0
+          ],
+          "pixel": [
+            711,
+            15
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "shape",
+          "kind": "line",
+          "bbox": [
+            593.0,
+            808.0,
+            594.0,
+            826.0
+          ],
+          "fill": null,
+          "stroke": "#DEF6FC"
         }
       ]
     },
@@ -795,10 +1133,12 @@
       "ocr": true,
       "text_lines": 20,
       "text_chars": 219,
-      "images": 1,
+      "images": 2,
       "shapes": 0,
       "tables": 0,
       "art_layers": 0,
+      "background_layers": 1,
+      "full_page_image": false,
       "elements": [
         {
           "type": "text",
@@ -1102,18 +1442,37 @@
         },
         {
           "type": "image",
+          "kind": "logo",
           "bbox": [
-            0.0,
-            0.0,
-            852.0,
-            1212.0
+            44.0,
+            41.0,
+            806.0,
+            101.0
           ],
           "pixel": [
-            852,
-            1212
+            762,
+            60
           ],
-          "format": "jpeg",
-          "alpha": false
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "illustration",
+          "bbox": [
+            44.0,
+            1122.0,
+            755.0,
+            1138.0
+          ],
+          "pixel": [
+            711,
+            16
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
         }
       ]
     },
@@ -1124,10 +1483,12 @@
       "ocr": true,
       "text_lines": 17,
       "text_chars": 173,
-      "images": 1,
-      "shapes": 0,
+      "images": 10,
+      "shapes": 4,
       "tables": 0,
       "art_layers": 0,
+      "background_layers": 1,
+      "full_page_image": false,
       "elements": [
         {
           "type": "text",
@@ -1386,18 +1747,221 @@
         },
         {
           "type": "image",
+          "kind": "logo",
           "bbox": [
-            0.0,
-            0.0,
-            852.0,
-            1212.0
+            434.0,
+            330.0,
+            804.0,
+            675.0
           ],
           "pixel": [
-            852,
-            1212
+            370,
+            345
           ],
-          "format": "jpeg",
-          "alpha": false
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "logo",
+          "bbox": [
+            434.0,
+            699.0,
+            804.0,
+            1044.0
+          ],
+          "pixel": [
+            370,
+            345
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "logo",
+          "bbox": [
+            49.0,
+            330.0,
+            418.0,
+            675.0
+          ],
+          "pixel": [
+            369,
+            345
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "logo",
+          "bbox": [
+            49.0,
+            699.0,
+            418.0,
+            1044.0
+          ],
+          "pixel": [
+            369,
+            345
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "logo",
+          "bbox": [
+            49.0,
+            43.0,
+            804.0,
+            98.0
+          ],
+          "pixel": [
+            755,
+            55
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "illustration",
+          "bbox": [
+            50.0,
+            1126.0,
+            803.0,
+            1143.0
+          ],
+          "pixel": [
+            753,
+            17
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "photo",
+          "bbox": [
+            479.0,
+            752.0,
+            588.0,
+            843.0
+          ],
+          "pixel": [
+            109,
+            91
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "photo",
+          "bbox": [
+            488.0,
+            377.0,
+            583.0,
+            468.0
+          ],
+          "pixel": [
+            95,
+            91
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "photo",
+          "bbox": [
+            94.0,
+            758.0,
+            189.0,
+            843.0
+          ],
+          "pixel": [
+            95,
+            85
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "photo",
+          "bbox": [
+            93.0,
+            377.0,
+            173.0,
+            469.0
+          ],
+          "pixel": [
+            80,
+            92
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "shape",
+          "kind": "rect",
+          "bbox": [
+            58.0,
+            339.0,
+            409.0,
+            666.0
+          ],
+          "fill": "#FEFEFE",
+          "stroke": null
+        },
+        {
+          "type": "shape",
+          "kind": "rect",
+          "bbox": [
+            442.0,
+            339.0,
+            795.0,
+            666.0
+          ],
+          "fill": "#FEFEFE",
+          "stroke": null
+        },
+        {
+          "type": "shape",
+          "kind": "rect",
+          "bbox": [
+            58.0,
+            708.0,
+            409.0,
+            1035.0
+          ],
+          "fill": "#FEFEFE",
+          "stroke": null
+        },
+        {
+          "type": "shape",
+          "kind": "rect",
+          "bbox": [
+            442.0,
+            708.0,
+            795.0,
+            1035.0
+          ],
+          "fill": "#FEFEFE",
+          "stroke": null
         }
       ]
     },
@@ -1408,10 +1972,12 @@
       "ocr": true,
       "text_lines": 16,
       "text_chars": 173,
-      "images": 1,
+      "images": 6,
       "shapes": 0,
       "tables": 0,
       "art_layers": 0,
+      "background_layers": 1,
+      "full_page_image": false,
       "elements": [
         {
           "type": "text",
@@ -1655,18 +2221,105 @@
         },
         {
           "type": "image",
+          "kind": "illustration",
           "bbox": [
-            0.0,
-            0.0,
-            852.0,
-            1212.0
+            48.0,
+            330.0,
+            438.0,
+            1064.0
           ],
           "pixel": [
-            852,
-            1212
+            390,
+            734
           ],
-          "format": "jpeg",
-          "alpha": false
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "logo",
+          "bbox": [
+            48.0,
+            43.0,
+            803.0,
+            98.0
+          ],
+          "pixel": [
+            755,
+            55
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "illustration",
+          "bbox": [
+            49.0,
+            1126.0,
+            803.0,
+            1143.0
+          ],
+          "pixel": [
+            754,
+            17
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "logo",
+          "bbox": [
+            49.0,
+            342.0,
+            204.0,
+            409.0
+          ],
+          "pixel": [
+            155,
+            67
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "photo",
+          "bbox": [
+            490.0,
+            590.0,
+            583.0,
+            664.0
+          ],
+          "pixel": [
+            93,
+            74
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "illustration",
+          "bbox": [
+            493.0,
+            854.0,
+            578.0,
+            927.0
+          ],
+          "pixel": [
+            85,
+            73
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
         }
       ]
     },
@@ -1675,43 +2328,15 @@
       "width": 852.0,
       "height": 1212.0,
       "ocr": true,
-      "text_lines": 29,
-      "text_chars": 281,
-      "images": 1,
-      "shapes": 0,
+      "text_lines": 15,
+      "text_chars": 187,
+      "images": 7,
+      "shapes": 1,
       "tables": 0,
       "art_layers": 0,
+      "background_layers": 0,
+      "full_page_image": false,
       "elements": [
-        {
-          "type": "text",
-          "text": "郑州莱奥特科技",
-          "bbox": [
-            113.0,
-            40.83,
-            246.0,
-            61.0
-          ],
-          "font": "",
-          "size": 18.05,
-          "bold": false,
-          "italic": false,
-          "runs": 1
-        },
-        {
-          "type": "text",
-          "text": "柯幻·让智能体有温度",
-          "bbox": [
-            641.0,
-            41.14,
-            805.0,
-            60.0
-          ],
-          "font": "",
-          "size": 15.52,
-          "bold": false,
-          "italic": false,
-          "runs": 1
-        },
         {
           "type": "text",
           "text": "市场趋势",
@@ -1774,36 +2399,6 @@
         },
         {
           "type": "text",
-          "text": "2,500",
-          "bbox": [
-            65.0,
-            446.14,
-            102.0,
-            462.0
-          ],
-          "font": "",
-          "size": 14.34,
-          "bold": false,
-          "italic": false,
-          "runs": 1
-        },
-        {
-          "type": "text",
-          "text": "2,360",
-          "bbox": [
-            356.0,
-            446.14,
-            393.0,
-            463.0
-          ],
-          "font": "",
-          "size": 14.34,
-          "bold": false,
-          "italic": false,
-          "runs": 1
-        },
-        {
-          "type": "text",
           "text": "提升运营效率",
           "bbox": [
             445.0,
@@ -1834,81 +2429,6 @@
         },
         {
           "type": "text",
-          "text": "2,000",
-          "bbox": [
-            65.0,
-            506.14,
-            102.0,
-            522.0
-          ],
-          "font": "",
-          "size": 14.34,
-          "bold": false,
-          "italic": false,
-          "runs": 1
-        },
-        {
-          "type": "text",
-          "text": "1,680",
-          "bbox": [
-            294.0,
-            525.05,
-            335.0,
-            546.0
-          ],
-          "font": "",
-          "size": 15.89,
-          "bold": false,
-          "italic": false,
-          "runs": 1
-        },
-        {
-          "type": "text",
-          "text": "1,500",
-          "bbox": [
-            66.0,
-            565.16,
-            102.0,
-            582.0
-          ],
-          "font": "",
-          "size": 13.95,
-          "bold": false,
-          "italic": false,
-          "runs": 1
-        },
-        {
-          "type": "text",
-          "text": "1,120",
-          "bbox": [
-            234.0,
-            593.95,
-            279.0,
-            617.0
-          ],
-          "font": "",
-          "size": 17.44,
-          "bold": false,
-          "italic": false,
-          "runs": 1
-        },
-        {
-          "type": "text",
-          "text": "优化客户体验",
-          "bbox": [
-            445.0,
-            603.19,
-            541.0,
-            621.0
-          ],
-          "font": "",
-          "size": 15.05,
-          "bold": false,
-          "italic": false,
-          "runs": 1
-        },
-        {
-          "type": "text",
           "text": "48%",
           "bbox": [
             705.0,
@@ -1924,66 +2444,6 @@
         },
         {
           "type": "text",
-          "text": "1,000",
-          "bbox": [
-            66.0,
-            626.16,
-            102.0,
-            643.0
-          ],
-          "font": "",
-          "size": 13.95,
-          "bold": false,
-          "italic": false,
-          "runs": 1
-        },
-        {
-          "type": "text",
-          "text": "680",
-          "bbox": [
-            189.0,
-            647.87,
-            220.0,
-            668.0
-          ],
-          "font": "",
-          "size": 18.79,
-          "bold": false,
-          "italic": false,
-          "runs": 1
-        },
-        {
-          "type": "text",
-          "text": "500-320",
-          "bbox": [
-            77.0,
-            684.58,
-            164.0,
-            709.0
-          ],
-          "font": "",
-          "size": 23.64,
-          "bold": false,
-          "italic": false,
-          "runs": 1
-        },
-        {
-          "type": "text",
-          "text": "降低人力成本",
-          "bbox": [
-            447.0,
-            714.21,
-            542.0,
-            732.0
-          ],
-          "font": "",
-          "size": 14.89,
-          "bold": false,
-          "italic": false,
-          "runs": 1
-        },
-        {
-          "type": "text",
           "text": "36%",
           "bbox": [
             669.0,
@@ -1993,21 +2453,6 @@
           ],
           "font": "",
           "size": 20.83,
-          "bold": false,
-          "italic": false,
-          "runs": 1
-        },
-        {
-          "type": "text",
-          "text": "20232024202520262027",
-          "bbox": [
-            129.0,
-            771.92,
-            392.0,
-            786.0
-          ],
-          "font": "",
-          "size": 18.06,
           "bold": false,
           "italic": false,
           "runs": 1
@@ -2119,18 +2564,134 @@
         },
         {
           "type": "image",
+          "kind": "logo",
+          "bbox": [
+            427.0,
+            346.0,
+            809.0,
+            823.0
+          ],
+          "pixel": [
+            382,
+            477
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "logo",
+          "bbox": [
+            46.0,
+            346.0,
+            419.0,
+            823.0
+          ],
+          "pixel": [
+            373,
+            477
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "logo",
+          "bbox": [
+            63.0,
+            444.0,
+            402.0,
+            789.0
+          ],
+          "pixel": [
+            339,
+            345
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "illustration",
+          "bbox": [
+            442.0,
+            442.0,
+            743.0,
+            779.0
+          ],
+          "pixel": [
+            301,
+            337
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "logo",
+          "bbox": [
+            130.0,
+            444.0,
+            396.0,
+            725.0
+          ],
+          "pixel": [
+            266,
+            281
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "illustration",
+          "bbox": [
+            44.0,
+            26.0,
+            810.0,
+            82.0
+          ],
+          "pixel": [
+            766,
+            56
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "logo",
+          "bbox": [
+            44.0,
+            1128.0,
+            810.0,
+            1167.0
+          ],
+          "pixel": [
+            766,
+            39
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "shape",
+          "kind": "rect",
           "bbox": [
             0.0,
             0.0,
             852.0,
             1212.0
           ],
-          "pixel": [
-            852,
-            1212
-          ],
-          "format": "jpeg",
-          "alpha": false
+          "fill": "#FEFEFE",
+          "stroke": null
         }
       ]
     },
@@ -2139,43 +2700,15 @@
       "width": 852.0,
       "height": 1212.0,
       "ocr": true,
-      "text_lines": 19,
-      "text_chars": 216,
-      "images": 1,
+      "text_lines": 17,
+      "text_chars": 199,
+      "images": 3,
       "shapes": 0,
       "tables": 0,
       "art_layers": 0,
+      "background_layers": 1,
+      "full_page_image": false,
       "elements": [
-        {
-          "type": "text",
-          "text": "郑州莱奥特科技",
-          "bbox": [
-            110.0,
-            40.83,
-            243.0,
-            61.0
-          ],
-          "font": "",
-          "size": 18.05,
-          "bold": false,
-          "italic": false,
-          "runs": 1
-        },
-        {
-          "type": "text",
-          "text": "柯幻·让智能体有温度",
-          "bbox": [
-            639.0,
-            41.13,
-            804.0,
-            60.0
-          ],
-          "font": "",
-          "size": 15.61,
-          "bold": false,
-          "italic": false,
-          "runs": 1
-        },
         {
           "type": "text",
           "text": "合作范围",
@@ -2433,18 +2966,54 @@
         },
         {
           "type": "image",
+          "kind": "illustration",
           "bbox": [
-            0.0,
-            0.0,
-            852.0,
-            1212.0
+            5.0,
+            343.0,
+            472.0,
+            1107.0
           ],
           "pixel": [
-            852,
-            1212
+            467,
+            764
           ],
-          "format": "jpeg",
-          "alpha": false
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "illustration",
+          "bbox": [
+            42.0,
+            26.0,
+            808.0,
+            82.0
+          ],
+          "pixel": [
+            766,
+            56
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
+        },
+        {
+          "type": "image",
+          "kind": "logo",
+          "bbox": [
+            43.0,
+            1128.0,
+            808.0,
+            1166.0
+          ],
+          "pixel": [
+            765,
+            38
+          ],
+          "format": "png",
+          "alpha": true,
+          "note": "独立图片对象，可单独选中、移动、缩放"
         }
       ]
     },
@@ -2459,6 +3028,8 @@
       "shapes": 0,
       "tables": 0,
       "art_layers": 0,
+      "background_layers": 1,
+      "full_page_image": false,
       "elements": [
         {
           "type": "text",
@@ -2552,6 +3123,7 @@
         },
         {
           "type": "image",
+          "kind": "background",
           "bbox": [
             0.0,
             0.0,
@@ -2563,7 +3135,8 @@
             1212
           ],
           "format": "jpeg",
-          "alpha": false
+          "alpha": false,
+          "note": "独立图片对象，可单独选中、移动、缩放"
         }
       ]
     }

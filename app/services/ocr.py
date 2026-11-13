@@ -72,6 +72,30 @@ class _Line:
     detections: list[_Detection] = field(default_factory=list)
 
 
+@dataclass
+class _Gutter:
+    """全页重复出现的竖直栏间空白。"""
+
+    center: float
+    width: float
+    support: int
+
+
+@dataclass
+class _GutterSet:
+    """一页之内的栏间空白集合。"""
+
+    gutters: list[_Gutter] = field(default_factory=list)
+    tolerance: float = 10.0
+
+    def covers(self, left: int, right: int) -> bool:
+        """水平间隙是否落在某条栏间空白上。"""
+        if right <= left:
+            return False
+        center = (left + right) / 2
+        return any(abs(gutter.center - center) <= self.tolerance for gutter in self.gutters)
+
+
 def _vertical_overlap(a: PixelRect, b: PixelRect) -> float:
     """两个框在垂直方向的重叠比例。"""
     top = max(a[1], b[1])
@@ -130,17 +154,10 @@ def _merge_detections(detections: list[_Detection]) -> list[_Detection]:
     return accepted
 
 
-def _group_lines(detections: list[_Detection]) -> list[_Line]:
-    """把水平相邻、垂直重叠的检测框合并为一行。
+def _build_bands(detections: list[_Detection]) -> list[list[_Detection]]:
+    """把检测框聚成「行带」。
 
-    分两步进行：
-
-    1. 依据垂直重叠把检测框聚成「行带」，同一行带内的检测框垂直方向
-       互相咬合，必然属于同一行文字；
-    2. 行带内再按水平间距切分，避免把左右两栏的内容并成一行。
-
-    先聚行带再切分，可以避免「右侧片段先建行、左侧片段因水平间隙过大
-    而无法归并」的问题（例如 "BUILD" 与 "A BETTER TOMORROW" 被拆成两行）。
+    行带 = 垂直方向互相咬合的一组检测框，必然属于同一行文字。
     """
     bands: list[list[_Detection]] = []
     band_rects: list[PixelRect] = []
@@ -163,6 +180,110 @@ def _group_lines(detections: list[_Detection]) -> list[_Line]:
         if not placed:
             bands.append([detection])
             band_rects.append(detection.rect)
+    return bands
+
+
+def _detect_gutters(bands: list[list[_Detection]]) -> _GutterSet:
+    """找出全页重复出现的竖直栏间空白。
+
+    多栏排版（卡片、指标项、多列要点）在多行之间共享同一条栏间空白，
+    这些 x 位置会在多个行带上重复出现——这是判断「这里是两栏」最可靠的信号。
+
+    **只看间隙宽度是分不开的**：实测素材里「栏间空白」与「词间空格」的
+    间隙/字高 比值都落在 1.0~3.0 的同一区间，完全重叠（见
+    ``docs/图层分解方案.md``）。因此这里不用单点阈值，而是看某个 x 位置
+    是否在**多个不同行带**上重复出现。
+    """
+    entries: list[tuple[float, float, float, float, int, int]] = []
+    heights: list[int] = []
+    for band_index, band in enumerate(bands):
+        members = sorted(band, key=lambda item: item.rect[0])
+        for member in members:
+            heights.append(member.rect[3] - member.rect[1])
+        for previous, current in zip(members, members[1:]):
+            left = previous.rect[2]
+            right = current.rect[0]
+            if right - left <= 0:
+                continue
+            entries.append(
+                (
+                    (left + right) / 2,
+                    float(right - left),
+                    float(previous.rect[2] - previous.rect[0]),
+                    float(current.rect[2] - current.rect[0]),
+                    band_index,
+                    max(1, current.rect[3] - current.rect[1]),
+                )
+            )
+    if not entries:
+        return _GutterSet()
+
+    median_height = float(sorted(heights)[len(heights) // 2]) if heights else 1.0
+    tolerance = max(8.0, 0.6 * median_height)
+    # 栏间空白至少要有 0.6 个字高宽，否则更像词间空格
+    min_gap_width = max(8.0, 0.6 * median_height)
+
+    clusters: list[dict] = []
+    for center, width, left_width, right_width, band_index, height in sorted(entries):
+        for cluster in clusters:
+            if abs(cluster["center"] - center) > tolerance:
+                continue
+            cluster["members"].append(
+                (center, width, left_width, right_width, band_index, height)
+            )
+            cluster["center"] = sum(m[0] for m in cluster["members"]) / len(cluster["members"])
+            break
+        else:
+            clusters.append(
+                {
+                    "center": center,
+                    "members": [
+                        (center, width, left_width, right_width, band_index, height)
+                    ],
+                }
+            )
+
+    gutters: list[_Gutter] = []
+    for cluster in clusters:
+        members = cluster["members"]
+        if len({member[4] for member in members}) < 2:
+            # 只在一行里出现过的空白，不足以判定为栏位
+            continue
+        usable = [
+            member
+            for member in members
+            if member[1] >= min_gap_width
+            and member[2] >= 0.7 * member[5]
+            and member[3] >= 0.7 * member[5]
+        ]
+        if len({member[4] for member in usable}) < 2:
+            # 两侧内容太窄，多半是项目符号与正文之间的空格
+            continue
+        gutters.append(
+            _Gutter(
+                center=cluster["center"],
+                width=sum(member[1] for member in members) / len(members),
+                support=len({member[4] for member in members}),
+            )
+        )
+    return _GutterSet(gutters=gutters, tolerance=tolerance)
+
+
+def _group_lines(detections: list[_Detection]) -> list[_Line]:
+    """把水平相邻、垂直重叠的检测框合并为一行。
+
+    分三步进行：
+
+    1. 依据垂直重叠把检测框聚成「行带」，同一行带内的检测框垂直方向
+       互相咬合，必然属于同一行文字；
+    2. 在全页范围内找出重复出现的栏间空白（多栏排版的共享空白）；
+    3. 行带内再按水平间距切分，避免把左右两栏的内容并成一行。
+
+    先聚行带再切分，可以避免「右侧片段先建行、左侧片段因水平间隙过大
+    而无法归并」的问题（例如 "BUILD" 与 "A BETTER TOMORROW" 被拆成两行）。
+    """
+    bands = _build_bands(detections)
+    gutters = _detect_gutters(bands)
 
     lines: list[_Line] = []
     for band in bands:
@@ -172,7 +293,9 @@ def _group_lines(detections: list[_Detection]) -> list[_Line]:
             previous = group[-1]
             height = max(1, current.rect[3] - current.rect[1])
             gap = max(previous.rect[0] - current.rect[2], current.rect[0] - previous.rect[2])
-            if gap > height * 2.5:
+            # 间隙超过一个字高半 → 必然是两段文字；
+            # 间隙落在全页栏间空白上 → 也是两栏
+            if gap > height * 1.8 or gutters.covers(previous.rect[2], current.rect[0]):
                 lines.append(_make_line(group))
                 group = [current]
             else:
@@ -190,6 +313,109 @@ def _make_line(members: list[_Detection]) -> _Line:
         max(item.rect[3] for item in members),
     )
     return _Line(rect=rect, detections=list(members))
+
+
+def _find_separator_strokes(
+    array: np.ndarray,
+    rect: PixelRect,
+    max_width: int = 5,
+    min_coverage: float = 0.55,
+    min_gap: int = 6,
+) -> list[tuple[int, int]]:
+    """找出文本框里独立的细竖直分隔线（装饰线，不是文字）。
+
+    设计稿常用一条细竖线把序号与标题分开（例如 ``01 | 品牌与愿景``），
+    OCR 会把这条线读成 ``1`` 或 ``/``。判据：
+
+    * 笔画很窄（≤ 5 px）；
+    * 贯穿框高；
+    * 左右都有明显空白——独立成笔，不与其他笔画相连。
+
+    「独立」这一条是关键：数字 ``0`` 的左右笔画被字身相连，间隙接近 0，
+    因此不会被误判为分隔线。
+    """
+    x0 = max(0, int(rect[0]))
+    y0 = max(0, int(rect[1]))
+    x1 = min(array.shape[1], int(rect[2]))
+    y1 = min(array.shape[0], int(rect[3]))
+    if x1 - x0 < 8 or y1 - y0 < 8:
+        return []
+
+    region = array[y0:y1, x0:x1].astype(np.float32)
+    background = np.median(region.reshape(-1, 3), axis=0)
+    distance = np.linalg.norm(region - background, axis=2)
+    mask = distance > 45
+
+    height = y1 - y0
+    column_ink = mask.sum(axis=0)
+    ink_columns = np.nonzero(column_ink > 0)[0]
+    if ink_columns.size == 0:
+        return []
+    candidates = column_ink >= max(2, min_coverage * height)
+
+    strokes: list[tuple[int, int]] = []
+    index = 0
+    while index < candidates.size:
+        if not candidates[index]:
+            index += 1
+            continue
+        end = index
+        while end + 1 < candidates.size and candidates[end + 1]:
+            end += 1
+        width = end - index + 1
+        left = ink_columns[ink_columns < index]
+        right = ink_columns[ink_columns > end]
+        left_gap = int(index - left.max() - 1) if left.size else 10**6
+        right_gap = int(right.min() - end - 1) if right.size else 10**6
+        if width <= max_width and left_gap >= min_gap and right_gap >= min_gap:
+            strokes.append((x0 + index, x0 + end + 1))
+        index = end + 1
+    return strokes
+
+
+def _ink_amount(array: np.ndarray, rect: PixelRect) -> int:
+    """统计矩形内的文字墨迹像素数。"""
+    x0 = max(0, int(rect[0]))
+    y0 = max(0, int(rect[1]))
+    x1 = min(array.shape[1], int(rect[2]))
+    y1 = min(array.shape[0], int(rect[3]))
+    if x1 - x0 < 1 or y1 - y0 < 1:
+        return 0
+    region = array[y0:y1, x0:x1].astype(np.float32)
+    background = np.median(region.reshape(-1, 3), axis=0)
+    distance = np.linalg.norm(region - background, axis=2)
+    return int((distance > 45).sum())
+
+
+def _shrink_by_strokes(
+    array: np.ndarray, rect: PixelRect, strokes: list[tuple[int, int]]
+) -> PixelRect:
+    """把框里的装饰竖线排除出去。
+
+    只有当竖线的一侧几乎没有墨迹时，才把它当作装饰线剔除。这样正文里
+    真正的「丨」「/」（两侧都有内容）不会被误删，而「01 | 标题」这种
+    序号旁的分隔线会被正确识别成图形而不是文字。
+    """
+    x0, y0, x1, y1 = rect
+    for stroke_x0, stroke_x1 in strokes:
+        left_ink = _ink_amount(array, (x0, y0, stroke_x0, y1))
+        right_ink = _ink_amount(array, (stroke_x1, y0, x1, y1))
+        total = left_ink + right_ink
+        if total <= 0:
+            continue
+        if right_ink <= total * 0.08:
+            # 竖线右侧没有内容 → 保留左侧的正文
+            x1 = min(x1, stroke_x0)
+        elif left_ink <= total * 0.08:
+            # 竖线左侧没有内容 → 保留右侧的正文
+            x0 = max(x0, stroke_x1)
+        else:
+            # 两侧都有内容 → 是正文里的字符，保持原样
+            continue
+    if x1 - x0 < max(6, (rect[2] - rect[0]) * 0.25):
+        # 排除后几乎不剩内容 → 放弃，保持原框
+        return rect
+    return (x0, y0, x1, y1)
 
 
 class OcrEngine:
@@ -251,13 +477,18 @@ class OcrEngine:
         span_x = (rect[2] - rect[0]) / max(array.shape[1], 1)
         span_y = (rect[3] - rect[1]) / max(array.shape[0], 1)
         for line in lines:
-            recognized = self._recognize_strip(engine, array, line)
+            box = line.rect
+            # 装饰用的细竖线会被 OCR 读成 "1" / "/"，先从框里排除，
+            # 这样既不会混进文字，也不会在抹字时被一起抹掉
+            strokes = _find_separator_strokes(array, box)
+            if strokes:
+                box = _shrink_by_strokes(box, strokes)
+            recognized = self._recognize_strip(engine, array, box)
             if not recognized:
                 continue
             content, score = recognized
             if score < min_confidence:
                 continue
-            box = line.rect
             # 检测框通常比真实墨迹大，用像素投影测量紧致的墨迹范围
             ink, segment_widths, segment_gaps = measure_ink(array, box)
             page_rect = self._to_page_rect(box, rect, array.shape[1], array.shape[0])
@@ -321,9 +552,11 @@ class OcrEngine:
             )
         return detections
 
-    def _recognize_strip(self, engine, array: np.ndarray, line: _Line) -> tuple[str, float]:
+    def _recognize_strip(
+        self, engine, array: np.ndarray, rect: PixelRect
+    ) -> tuple[str, float]:
         """对整行做「仅识别」，得到带空格的完整文本。"""
-        x0, y0, x1, y1 = line.rect
+        x0, y0, x1, y1 = rect
         pad = 2
         crop = array[
             max(0, y0 - pad) : min(array.shape[0], y1 + pad),

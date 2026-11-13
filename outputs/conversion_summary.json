@@ -4,16 +4,19 @@
     "status": "ok",
     "output": "outputs\\测试1\\测试1.pptx",
     "report": "outputs\\测试1\\report.json",
-    "elapsed_seconds": 53.51,
+    "elapsed_seconds": 100.18,
     "summary": {
-      "text_lines": 299,
-      "text_chars": 2931,
-      "images": 10,
-      "shapes": 0,
+      "text_lines": 283,
+      "text_chars": 2442,
+      "images": 109,
+      "shapes": 27,
       "tables": 0,
       "art_layers": 0,
-      "editable_objects": 309,
-      "editable_ratio": 1.0
+      "background_layers": 9,
+      "editable_objects": 419,
+      "editable_ratio": 1.0,
+      "decomposed_pages": 10,
+      "full_page_image_pages": 0
     }
   },
   {
@@ -21,16 +24,19 @@
     "status": "ok",
     "output": "outputs\\测试2\\测试2.pptx",
     "report": "outputs\\测试2\\report.json",
-    "elapsed_seconds": 46.21,
+    "elapsed_seconds": 99.68,
     "summary": {
-      "text_lines": 195,
-      "text_chars": 2197,
-      "images": 10,
-      "shapes": 0,
+      "text_lines": 175,
+      "text_chars": 1879,
+      "images": 79,
+      "shapes": 31,
       "tables": 0,
       "art_layers": 0,
-      "editable_objects": 205,
-      "editable_ratio": 1.0
+      "background_layers": 10,
+      "editable_objects": 285,
+      "editable_ratio": 1.0,
+      "decomposed_pages": 10,
+      "full_page_image_pages": 0
     }
   },
   {
@@ -38,16 +44,19 @@
     "status": "ok",
     "output": "outputs\\测试3\\测试3.pptx",
     "report": "outputs\\测试3\\report.json",
-    "elapsed_seconds": 31.01,
+    "elapsed_seconds": 73.89,
     "summary": {
-      "text_lines": 151,
-      "text_chars": 1473,
-      "images": 10,
-      "shapes": 0,
+      "text_lines": 134,
+      "text_chars": 1335,
+      "images": 43,
+      "shapes": 11,
       "tables": 0,
       "art_layers": 0,
-      "editable_objects": 161,
-      "editable_ratio": 1.0
+      "background_layers": 8,
+      "editable_objects": 188,
+      "editable_ratio": 1.0,
+      "decomposed_pages": 9,
+      "full_page_image_pages": 0
     }
   }
 ]

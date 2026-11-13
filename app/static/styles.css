@@ -136,6 +136,7 @@ body {
   background: #eef2ff; color: #3730a3; border: 1px solid #e0e7ff;
 }
 .chip.gray { background: #f1f5f9; color: #475569; border-color: #e2e8f0; }
+.chip.warn { background: #fef3c7; color: #92400e; border-color: #fde68a; }
 .ratio { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
 .bar { flex: 1; height: 8px; border-radius: 999px; background: #e2e8f0; overflow: hidden; }
 .bar > i { display: block; height: 100%; background: linear-gradient(90deg, #10b981, #2563eb); }

@@ -30,6 +30,15 @@ class ConvertFileStat(BaseModel):
     tables: int = 0
     art_layers: int = 0
     editable_ratio: float = Field(default=0.0, description="可编辑元素占全部元素的比例")
+    background_layers: int = Field(
+        default=0, description="重建出的背景层数量（每页最多 1 层）"
+    )
+    decomposed_pages: int = Field(
+        default=0, description="成功拆成多个独立图片对象的页面数"
+    )
+    full_page_image_pages: int = Field(
+        default=0, description="退化成「整页一张图」的页面数，应为 0"
+    )
 
 
 class ConvertedFile(BaseModel):

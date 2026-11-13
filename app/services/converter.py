@@ -1,17 +1,35 @@
-"""转换流程编排：解析 → 渲染复杂矢量层 → 构建 PPTX → 生成校验报告。"""
+"""转换流程编排：解析 → 渲染复杂矢量层 → 图层分解 → 构建 PPTX → 生成校验报告。"""
 
 from __future__ import annotations
 
 import json
+import logging
 from dataclasses import dataclass, field
 from pathlib import Path
 
+import numpy as np
 import pymupdf
 
 from app.core.config import settings
-from app.services.ocr import OcrEngine, erase_regions, pixel_regions
-from app.services.pdf_parser import ImageElement, PageModel, PdfParser, Rect, TextLine, TextSpan
+from app.services.layering import (
+    LayeringOptions,
+    LayeringResult,
+    export_region,
+    split_page,
+)
+from app.services.ocr import OcrEngine, OcrText, erase_regions, pixel_regions
+from app.services.pdf_parser import (
+    ImageElement,
+    PageModel,
+    PdfParser,
+    Rect,
+    ShapeElement,
+    TextLine,
+    TextSpan,
+)
 from app.services.pptx_builder import PptxBuilder
+
+logger = logging.getLogger(__name__)
 
 
 class ConversionError(Exception):
@@ -28,6 +46,10 @@ class ConvertOptions:
     enable_ocr: bool = True
     ocr_min_confidence: float = 0.5
     ocr_erase_text: bool = True
+    #: 是否把整页位图拆成「背景 + 独立图片对象 + 原生形状」
+    enable_layering: bool = True
+    #: 图层分解参数
+    layering: LayeringOptions = field(default_factory=LayeringOptions)
 
 
 @dataclass
@@ -111,69 +133,186 @@ def _color_to_int(color: tuple[int, int, int]) -> int:
     return (color[0] << 16) | (color[1] << 8) | color[2]
 
 
-def apply_ocr(model: PageModel, options: ConvertOptions) -> int:
+def _to_text_line(item: OcrText) -> TextLine:
+    """把 OCR 文字块转成可编辑文本框。"""
+    box = item.layout_rect()
+    return TextLine(
+        spans=[
+            TextSpan(
+                text=item.text,
+                font="",
+                size=item.size,
+                color=_color_to_int(item.color),
+                bold=False,
+                italic=False,
+                bbox=box,
+                spacing=item.spacing,
+            )
+        ],
+        bbox=box,
+    )
+
+
+def apply_ocr(model: PageModel, options: ConvertOptions) -> list[OcrText]:
     """对「整页位图」页面执行 OCR，把文字还原为可编辑文本框。
 
-    返回识别出的文字块数量。
+    返回识别出的文字块列表，供图层分解判断「文字压在图片上还是平底上」。
     """
     if not options.enable_ocr or not model.image_only or model.background is None:
-        return 0
+        return []
     engine = OcrEngine.instance()
     if not engine.available():
-        return 0
+        return []
 
     background = model.background
     texts = engine.recognize(
         background.data, background.rect, min_confidence=options.ocr_min_confidence
     )
     if not texts:
-        return 0
+        return []
 
-    # 1) 把文字从底图中抹掉，避免与叠加文字重影
-    if options.ocr_erase_text:
+    model.texts = [_to_text_line(item) for item in texts]
+    model.ocr_applied = True
+    return texts
+
+
+def _fallback_single_image(model: PageModel, texts: list[OcrText]) -> None:
+    """图层分解不可用时的退化路径：整页图擦掉文字后作为唯一图片对象。"""
+    background = model.background
+    if background is None:
+        return
+    cleaned = background.data
+    if texts:
         size = (background.pixel_width, background.pixel_height)
         regions = pixel_regions(texts, background.rect, size)
         try:
             cleaned = erase_regions(background.data, regions)
-            model.images = [
-                ImageElement(
-                    xref=background.xref,
-                    rect=background.rect,
-                    data=cleaned,
-                    ext="jpeg",
-                    pixel_width=background.pixel_width,
-                    pixel_height=background.pixel_height,
-                    alpha=False,
-                )
-            ]
-            model.background = model.images[0]
         except Exception:
-            pass
+            cleaned = background.data
+    element = ImageElement(
+        xref=background.xref,
+        rect=background.rect,
+        data=cleaned,
+        ext="jpeg",
+        pixel_width=background.pixel_width,
+        pixel_height=background.pixel_height,
+        alpha=False,
+        kind="background",
+    )
+    model.images = [element]
+    model.background = element
 
-    # 2) 文字转为可编辑文本框
-    lines: list[TextLine] = []
-    for item in texts:
-        box = item.layout_rect()
-        lines.append(
-            TextLine(
-                spans=[
-                    TextSpan(
-                        text=item.text,
-                        font="",
-                        size=item.size,
-                        color=_color_to_int(item.color),
-                        bold=False,
-                        italic=False,
-                        bbox=box,
-                        spacing=item.spacing,
-                    )
-                ],
-                bbox=box,
+
+def apply_layering(
+    model: PageModel, options: ConvertOptions, texts: list[OcrText]
+) -> LayeringResult | None:
+    """把整页位图拆成「背景 + 若干独立图片对象 + 原生形状」。
+
+    这是让照片 / 插画 / Logo 能被**独立选择、移动、缩放**的关键一步：
+    素材 PDF 里每页只有一张整页图，不做分解就永远只能整体操作。
+    """
+    background = model.background
+    if not options.enable_layering or background is None:
+        return None
+
+    page_rect = background.rect
+    size = (background.pixel_width, background.pixel_height)
+    text_rects = pixel_regions(texts, page_rect, size)
+
+    try:
+        result = split_page(background.data, page_rect, text_rects, options.layering)
+    except Exception as exc:
+        logger.warning("图层分解失败（第 %s 页），降级为整页图片：%s", model.index + 1, exc)
+        _fallback_single_image(model, texts)
+        return None
+
+    if not result.regions:
+        _fallback_single_image(model, texts)
+        return None
+
+    try:
+        from io import BytesIO
+
+        from PIL import Image
+
+        with Image.open(BytesIO(background.data)) as handle:
+            array = np.array(handle.convert("RGB"))
+    except Exception as exc:
+        logger.warning("背景位图解码失败（第 %s 页）：%s", model.index + 1, exc)
+        _fallback_single_image(model, texts)
+        return None
+
+    # --- 独立图片对象 ---------------------------------------------------
+    # 图内文字（Logo / 配图里的字）保留在图片像素里，不单独生成文本框，
+    # 否则会出现重影，还容易把相邻 Logo 的字误合并成一行。
+    # 压在照片上的文字则局部修复后另起一个可编辑文本框。
+    images: list[ImageElement] = []
+    for region_index, region in enumerate(result.regions):
+        repair = [
+            rect
+            for index, rect in result.region_text_rects.get(region_index, [])
+            if index not in result.artwork_text
+        ]
+        try:
+            png, width, height = export_region(array, region, repair, options.layering)
+        except Exception:
+            continue
+        images.append(
+            ImageElement(
+                xref=0,
+                rect=region.rect,
+                data=png,
+                ext="png",
+                pixel_width=width,
+                pixel_height=height,
+                alpha=True,
+                kind=region.kind,
             )
         )
-    model.texts = lines
-    model.ocr_applied = True
-    return len(lines)
+    if not images:
+        _fallback_single_image(model, texts)
+        return None
+
+    model.images = images
+    model.texts = [
+        _to_text_line(item)
+        for index, item in enumerate(texts)
+        if index not in result.artwork_text
+    ]
+
+    # --- 原生形状（卡片 / 线条 / 自由曲线） -----------------------------
+    model.shapes.extend(result.shapes)
+
+    # --- 背景层 ---------------------------------------------------------
+    if result.flat_color is not None:
+        # 纯色背景 → PPT 原生矩形，完全可编辑
+        color = tuple(channel / 255.0 for channel in result.flat_color)
+        model.shapes.insert(
+            0,
+            ShapeElement(
+                kind="rect",
+                rect=page_rect,
+                color=None,
+                fill=color,  # type: ignore[arg-type]
+                width=0.0,
+            ),
+        )
+        model.background = None
+    elif result.background:
+        model.background = ImageElement(
+            xref=0,
+            rect=page_rect,
+            data=result.background,
+            ext="png",
+            pixel_width=size[0],
+            pixel_height=size[1],
+            alpha=False,
+            kind="background",
+        )
+    else:
+        model.background = None
+
+    return result
 
 
 def _element_report(model: PageModel, has_art: bool) -> list[dict]:
@@ -197,10 +336,12 @@ def _element_report(model: PageModel, has_art: bool) -> list[dict]:
         elements.append(
             {
                 "type": "image",
+                "kind": image.kind,
                 "bbox": [round(v, 2) for v in image.rect],
                 "pixel": [image.pixel_width, image.pixel_height],
                 "format": image.ext,
                 "alpha": image.alpha,
+                "note": "独立图片对象，可单独选中、移动、缩放",
             }
         )
     for shape in model.shapes:
@@ -242,13 +383,42 @@ def _color_hex(color) -> str | None:
     )
 
 
-def build_report(pages: list[PageModel], art_pages: set[int], source_name: str) -> dict:
+def build_report(
+    pages: list[PageModel],
+    art_pages: set[int],
+    source_name: str,
+    layer_stats: list[dict] | None = None,
+) -> dict:
     """生成可编辑性验证报告。"""
     page_reports = []
-    totals = {"text_lines": 0, "text_chars": 0, "images": 0, "shapes": 0, "tables": 0, "art_layers": 0}
+    totals = {
+        "text_lines": 0,
+        "text_chars": 0,
+        "images": 0,
+        "shapes": 0,
+        "tables": 0,
+        "art_layers": 0,
+        "background_layers": 0,
+    }
+    decomposed_pages = 0
+    full_page_image_pages = 0
 
     for model in pages:
         has_art = model.index in art_pages
+        page_area = model.width * model.height
+        full_page_image = (
+            len(model.images) == 1
+            and not model.texts
+            and (
+                (model.images[0].rect[2] - model.images[0].rect[0])
+                * (model.images[0].rect[3] - model.images[0].rect[1])
+                >= page_area * 0.9
+            )
+        )
+        if len(model.images) > 1:
+            decomposed_pages += 1
+        if full_page_image:
+            full_page_image_pages += 1
         stats = {
             "text_lines": len(model.texts),
             "text_chars": sum(line.char_count for line in model.texts),
@@ -256,9 +426,12 @@ def build_report(pages: list[PageModel], art_pages: set[int], source_name: str) 
             "shapes": len(model.shapes),
             "tables": len(model.tables),
             "art_layers": 1 if has_art else 0,
+            "background_layers": 1 if model.background is not None else 0,
+            "full_page_image": full_page_image,
         }
         for key, value in stats.items():
-            totals[key] += value
+            if key in totals:
+                totals[key] += value
         page_reports.append(
             {
                 "index": model.index + 1,
@@ -279,7 +452,10 @@ def build_report(pages: list[PageModel], art_pages: set[int], source_name: str) 
             **totals,
             "editable_objects": editable,
             "editable_ratio": round(editable / total, 4) if total else 0.0,
+            "decomposed_pages": decomposed_pages,
+            "full_page_image_pages": full_page_image_pages,
         },
+        "layering": layer_stats or [],
         "pages": page_reports,
     }
 
@@ -327,13 +503,19 @@ def convert_pdf(
         finally:
             renderer.close()
 
-    # 图片型页面 → OCR 还原文字
+    # 图片型页面 → OCR 还原文字 → 图层分解（拆出独立图片对象）
+    layer_stats: list[dict] = []
     for model in pages:
         if model.image_only:
             try:
-                apply_ocr(model, options)
+                texts = apply_ocr(model, options)
+                layering = apply_layering(model, options, texts)
+                if layering is not None:
+                    layer_stats.append({"page": model.index + 1, **layering.stats})
             except Exception:
                 continue
+        else:
+            apply_ocr(model, options)
 
     stem = Path(source_name).stem or "converted"
     output_path = output_dir / f"{stem}.pptx"
@@ -344,7 +526,7 @@ def convert_pdf(
     except Exception as exc:
         raise ConversionError(f"PPTX 生成失败：{exc}") from exc
 
-    report = build_report(pages, set(art_images.keys()), source_name)
+    report = build_report(pages, set(art_images.keys()), source_name, layer_stats)
     report_path = output_dir / "report.json"
     report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
 
