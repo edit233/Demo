@@ -6,17 +6,13 @@
 
 > 本仓库同时是**题目二「PDF 转换为可编辑 PPTX」**的完整交付物：源码 + README + 3 套素材的转换结果 + 可编辑性验证材料 + 容器化部署文件。
 
+> **本分支为部署分支（`deploy`）**：只保留运行服务所需的最小文件集（34 个文件 / 0.4 MB），不含测试素材、转换结果与验证材料，以减小镜像体积与克隆开销。完整交付材料见 [`main` 分支](https://github.com/edit233/Demo/tree/main)。
+
 ---
 
 ## 一、效果对比
 
-左侧为原始 PDF 页面，右侧为转换后 PPTX 的近似渲染（由 `scripts/render_preview.py` 重绘）：
-
-| 素材 | 第 1 页对比 |
-| --- | --- |
-| 测试1 | [对比图](outputs/测试1/compare/compare_01.png) |
-| 测试2 | [对比图](outputs/测试2/compare/compare_01.png) |
-| 测试3 | [对比图](outputs/测试3/compare/compare_01.png) |
+左侧为原始 PDF 页面，右侧为转换后 PPTX 的近似渲染（由 `scripts/render_preview.py` 重绘）。3 套素材的对比图与预览图属于验证材料，本部署分支未收录，见 [`main` 分支](https://github.com/edit233/Demo/tree/main) 的 `outputs/` 目录。
 
 底图上的文字已被**抹除并替换为可编辑文本框**，因此页面上不存在「一张整页截图糊在 PPT 里」的情况。
 
@@ -138,6 +134,8 @@ python scripts/convert_materials.py 测试1.pdf       # 只转换指定文件
 python scripts/convert_materials.py --no-ocr       # 关闭 OCR（仅走结构化路径）
 ```
 
+> 脚本固定读取仓库根目录下的 `tests/materials/`。本部署分支不包含该目录（测试素材见 [`main` 分支](https://github.com/edit233/Demo/tree/main)），使用前请自行把待转换的 PDF 放入 `tests/materials/`。
+
 ---
 
 ## 六、配置项
@@ -173,8 +171,8 @@ python scripts/convert_materials.py --no-ocr       # 关闭 OCR（仅走结构�
 
 ```bash
 curl -X POST http://localhost:8000/api/convert \
-  -F "files=@tests/materials/测试1.pdf" \
-  -F "files=@tests/materials/测试2.pdf"
+  -F "files=@/path/to/测试1.pdf" \
+  -F "files=@/path/to/测试2.pdf"
 ```
 
 响应：
@@ -211,7 +209,7 @@ curl -X POST http://localhost:8000/api/convert \
 
 ### `GET /api/inspect/{file_id}`
 
-返回逐页元素明细的可编辑性验证报告（JSON），结构与 `outputs/<素材名>/report.json` 一致。
+返回逐页元素明细的可编辑性验证报告（JSON）。该报告在转换时实时生成并写入输出目录，其结构与验证材料中的 `report.json` 一致。
 
 ### `GET /api/health`
 
@@ -236,17 +234,7 @@ curl -X POST http://localhost:8000/api/convert \
 │   │   ├── converter.py         # 转换编排与报告生成
 │   │   └── cleanup.py           # 过期文件清理
 │   └── static/                  # 前端页面（原生 HTML/CSS/JS）
-├── scripts/
-│   ├── convert_materials.py     # 批量转换测试素材
-│   ├── verify_pptx.py           # 逐页对象清单
-│   ├── render_preview.py        # PPTX → PNG 近似渲染
-│   ├── compare_source.py        # 原图 vs 转换结果并排对比图
-│   ├── build_verification.py    # 生成可编辑性验证材料
-│   ├── optimize_images.py       # 压缩验证材料图片，减小仓库体积
-│   └── e2e_http_check.py        # HTTP 层端到端验证（上传→转换→下载→报告）
-├── tests/materials/             # 3 套测试素材 PDF
-├── outputs/                     # 3 套素材的转换结果 + 预览图 + 对比图
-├── verification/                # 可编辑性验证报告
+├── scripts/                     # 批量转换与验证工具（需自备素材，见 5.3）
 ├── Dockerfile
 ├── docker-compose.yml
 ├── requirements.txt
@@ -257,9 +245,11 @@ curl -X POST http://localhost:8000/api/convert \
 
 ## 九、可编辑性验证材料
 
-| 材料 | 位置 | 内容 |
+本部署分支不收录验证材料（`verification/` 与 `outputs/`），相关材料保存在 [`main` 分支](https://github.com/edit233/Demo/tree/main)：
+
+| 材料 | 位置（`main` 分支） | 内容 |
 | --- | --- | --- |
-| 验证报告 | [`verification/可编辑性验证报告.md`](verification/可编辑性验证报告.md) | 总体指标、OOXML 原生元素统计、逐页对象数、文本抽样 |
+| 验证报告 | `verification/可编辑性验证报告.md` | 总体指标、OOXML 原生元素统计、逐页对象数、文本抽样 |
 | 汇总数据 | `verification/summary.json` | 机器可读的统计结果 |
 | 逐页对象清单 | `outputs/<素材>/objects.txt` | 每页的对象类型、位置、文本内容 |
 | 元素明细报告 | `outputs/<素材>/report.json` | 每页每个元素的类型、包围盒、字号、颜色 |
@@ -267,7 +257,7 @@ curl -X POST http://localhost:8000/api/convert \
 | 原图对比图 | `outputs/<素材>/compare/compare_*.png` | 原始 PDF 页面与转换结果并排对比 |
 | 原始页面图 | `outputs/<素材>/compare/source/source_*.png` | 原始 PDF 每一页的渲染图，作为对比图的上半部分 |
 
-自行复验：
+自行复验（需自行准备素材后执行）：
 
 ```bash
 # 查看某个 PPTX 里到底有哪些对象
@@ -280,6 +270,7 @@ python scripts/build_verification.py
 python scripts/optimize_images.py
 
 # HTTP 层端到端验证（自动拉起服务，走一遍上传→转换→下载→报告）
+# 依赖 tests/materials/ 下的素材，需自行放入
 python scripts/e2e_http_check.py
 ```
 
@@ -289,7 +280,7 @@ python scripts/e2e_http_check.py
 
 ## 十、3 套素材的转换结果
 
-素材位于 `tests/materials/`，每份 10 页。
+3 套测试素材的转换结果（PPTX、预览图、对比图）保存在 [`main` 分支](https://github.com/edit233/Demo/tree/main)；本部署分支仅保留运行服务所需的最小文件集。转换结果的逐页统计数据如下：
 
 | 素材 | 页数 | 文本框 | 图片对象 | 原生可编辑对象（非图片） | 对象总数 | 可编辑占比 | 耗时 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -298,16 +289,6 @@ python scripts/e2e_http_check.py
 | 测试3.pdf | 10 | 151 | 10 | 151 | 161 | 100% | 31.0s |
 
 > **统计口径**：「原生可编辑对象」指非图片的原生对象（文本框 / 形状 / 表格 / 连接符）数量，可在 PowerPoint 中双击直接编辑；「对象总数」再加上图片对象——图片同样可独立选中、移动、缩放，因此也计入可编辑对象。「可编辑占比」= 可独立编辑的对象数 ÷ 页面对象总数，100% 意味着**没有任何一页退化成「整页背景图」**（若整页只放一张截图，占比会很低）。
-
-转换结果：
-
-| 素材 | PPTX | 预览 | 对比 |
-| --- | --- | --- | --- |
-| 测试1 | [下载](outputs/测试1/测试1.pptx) | [预览图](outputs/测试1/preview/slide_01.png) | [对比图](outputs/测试1/compare/compare_01.png) |
-| 测试2 | [下载](outputs/测试2/测试2.pptx) | [预览图](outputs/测试2/preview/slide_01.png) | [对比图](outputs/测试2/compare/compare_01.png) |
-| 测试3 | [下载](outputs/测试3/测试3.pptx) | [预览图](outputs/测试3/preview/slide_01.png) | [对比图](outputs/测试3/compare/compare_01.png) |
-
-> 完整目录见 [`outputs/`](outputs/) 与 [`verification/`](verification/)。
 
 ---
 
