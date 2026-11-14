@@ -40,7 +40,12 @@ def _find_output(file_id: str) -> Path | None:
 @router.get("/health", summary="健康检查")
 async def health() -> dict:
     """服务健康检查。"""
-    return {"status": "ok", "version": settings.version}
+    return {
+        "status": "ok",
+        "version": settings.version,
+        "max_upload_mb": settings.max_upload_mb,
+        "max_files": settings.max_files,
+    }
 
 
 @router.post("/convert", response_model=ConvertResponse, summary="批量转换 PDF 为 PPTX")
@@ -56,6 +61,13 @@ async def convert(
     """
     if not files:
         raise HTTPException(status_code=400, detail="请至少选择一个 PDF 文件")
+    if len(files) > settings.max_files:
+        # 批量转换是逐个串行累加的，文件数直接决定请求耗时。
+        # 这里提前拒绝，避免请求长时间挂起后被反向代理断掉（504）。
+        raise HTTPException(
+            status_code=400,
+            detail=f"单次最多转换 {settings.max_files} 个文件，当前 {len(files)} 个，请分批提交",
+        )
 
     results: list[ConvertedFile] = []
     errors: list[str] = []

@@ -1,6 +1,9 @@
 # 运行期依赖（与 pyproject.toml 保持一致）
 # 安装：pip install -r requirements.txt
 
+# 使用国内镜像源，避免 Docker 构建时走官方源超时
+-i https://pypi.tuna.tsinghua.edu.cn/simple
+
 # --- Web 框架 ---
 fastapi>=0.162.5
 uvicorn[standard]>=0.54.0

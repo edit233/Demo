@@ -3,7 +3,11 @@
 const state = {
   files: [],
   maxSizeMb: 100,
+  maxFiles: 10,
 };
+
+// 单份 10 页 PDF 的实测转换耗时约 50 秒，用于给用户一个批量耗时的预期
+const SECONDS_PER_FILE = 50;
 
 const el = {
   dropzone: document.getElementById("dropzone"),
@@ -44,7 +48,13 @@ function addFiles(fileList) {
       continue;
     }
     const duplicated = state.files.some((item) => item.name === file.name && item.size === file.size);
-    if (!duplicated) state.files.push(file);
+    if (duplicated) continue;
+    if (state.files.length >= state.maxFiles) {
+      // 批量是逐个串行累加的，文件数直接决定请求耗时，超出上限就提前拦下
+      showErrors([`单次最多转换 ${state.maxFiles} 个文件，请分批提交`]);
+      continue;
+    }
+    state.files.push(file);
   }
   renderFiles();
 }
@@ -77,13 +87,55 @@ function showErrors(messages) {
   el.errors.innerHTML = messages.map((msg) => `<p>${escapeHtml(msg)}</p>`).join("");
 }
 
+/* ---------- 响应解析 ---------- */
+
+// 常见网关状态码的排查提示，便于直接定位问题
+const HTTP_HINTS = {
+  404: "反向代理未把 /api/ 转发到后端",
+  413: "反向代理的上传体积上限过小（nginx client_max_body_size）",
+  502: "后端容器无响应或已被重启（查看 docker compose logs）",
+  504: "反向代理读取超时（nginx proxy_read_timeout），转换耗时可能超过代理上限",
+};
+
+async function readJsonResponse(response) {
+  // 先按文本读取：代理返回 HTML 错误页时 JSON.parse 会直接抛异常并吞掉状态码
+  const raw = await response.text();
+  try {
+    return { payload: JSON.parse(raw), raw };
+  } catch {
+    return { payload: null, raw };
+  }
+}
+
+function describeHttpError(response, raw) {
+  const head = String(raw || "").replace(/\s+/g, " ").trim().slice(0, 180);
+  const body = head ? `返回内容：${head}` : "返回内容为空";
+  const hint = HTTP_HINTS[response.status];
+  return (
+    `HTTP ${response.status} ${response.statusText || ""}｜服务端未返回 JSON，${body}` +
+    (hint ? `（提示：${hint}）` : "")
+  );
+}
+
 /* ---------- 转换 ---------- */
 async function convert() {
   if (state.files.length === 0) return;
   el.convertBtn.disabled = true;
   el.results.innerHTML = "";
   el.errors.innerHTML = "";
-  setStatus('<span class="spinner"></span>正在转换，请稍候…');
+
+  const total = state.files.length;
+  const estimate = total * SECONDS_PER_FILE;
+  const startedAt = Date.now();
+  const progressText = (extra) =>
+    `<span class="spinner"></span>正在转换 ${total} 个文件${extra}，预计约 ${estimate} 秒，请勿关闭页面…`;
+
+  setStatus(progressText(""));
+  // 批量转换可能持续数分钟，用计时器给出已用时，避免看起来像卡死
+  const timer = setInterval(() => {
+    const elapsed = Math.round((Date.now() - startedAt) / 1000);
+    setStatus(progressText(`，已用时 ${elapsed} 秒`));
+  }, 1000);
 
   const form = new FormData();
   state.files.forEach((file) => form.append("files", file, file.name));
@@ -93,11 +145,20 @@ async function convert() {
 
   try {
     const response = await fetch("/api/convert", { method: "POST", body: form });
-    const payload = await response.json();
+    const { payload, raw } = await readJsonResponse(response);
     if (!response.ok) {
-      const detail = payload.detail || "转换失败";
-      setStatus(escapeHtml(detail), "error");
-      showErrors(Array.isArray(detail) ? detail.map((d) => d.msg) : [detail]);
+      const detail = payload && payload.detail;
+      const message = detail
+        ? (Array.isArray(detail) ? detail.map((d) => d.msg).join("；") : detail)
+        : describeHttpError(response, raw);
+      setStatus(escapeHtml(message), "error");
+      showErrors(Array.isArray(detail) ? detail.map((d) => d.msg) : [message]);
+      return;
+    }
+    if (!payload) {
+      const message = describeHttpError(response, raw);
+      setStatus(escapeHtml(message), "error");
+      showErrors([message]);
       return;
     }
     renderResults(payload);
@@ -109,6 +170,7 @@ async function convert() {
   } catch (error) {
     setStatus("请求失败：" + escapeHtml(error.message), "error");
   } finally {
+    clearInterval(timer);
     el.convertBtn.disabled = state.files.length === 0;
   }
 }
@@ -152,9 +214,14 @@ async function showDetail(url, name) {
   el.dialog.showModal();
   try {
     const response = await fetch(url);
-    if (!response.ok) throw new Error("报告已过期");
-    const report = await response.json();
-    el.dialogBody.innerHTML = renderReport(report);
+    const { payload, raw } = await readJsonResponse(response);
+    if (!response.ok) {
+      throw new Error((payload && payload.detail) || describeHttpError(response, raw));
+    }
+    if (!payload) {
+      throw new Error(describeHttpError(response, raw));
+    }
+    el.dialogBody.innerHTML = renderReport(payload);
   } catch (error) {
     el.dialogBody.innerHTML = `<p class="placeholder">${escapeHtml(error.message)}</p>`;
   }
@@ -231,6 +298,7 @@ fetch("/api/health")
     if (data && data.version) {
       el.maxSize.textContent = data.max_upload_mb || state.maxSizeMb;
       state.maxSizeMb = data.max_upload_mb || state.maxSizeMb;
+      state.maxFiles = data.max_files || state.maxFiles;
     }
   })
   .catch(() => {});

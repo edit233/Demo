@@ -47,6 +47,7 @@ class Settings:
     output_dir: Path = Path(_env_str("PDF2PPTX_OUTPUT_DIR", str(BASE_DIR / "outputs")))
     max_upload_mb: int = _env_int("PDF2PPTX_MAX_UPLOAD_MB", 100)
     max_pages: int = _env_int("PDF2PPTX_MAX_PAGES", 300)
+    max_files: int = _env_int("PDF2PPTX_MAX_FILES", 10)
     retention_hours: int = _env_int("PDF2PPTX_RETENTION_HOURS", 6)
     render_scale: float = _env_float("PDF2PPTX_RENDER_SCALE", 2.0)
     keep_art_layer: bool = _env_bool("PDF2PPTX_KEEP_ART_LAYER", True)

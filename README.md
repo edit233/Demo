@@ -126,7 +126,44 @@ docker run -d -p 8000:8000 -v pdf2pptx-data:/data pdf2pptx-service:1.0.0
 
 容器内监听 `0.0.0.0:8000`，上传文件写入 `/data/uploads`，转换结果写入 `/data/outputs`（均可用卷挂载到宿主机）。
 
-### 5.3 批量转换本地素材
+### 5.3 反向代理（Nginx）
+
+**必须配置读取超时**，否则转换会被代理提前断开。Nginx 的 `proxy_read_timeout` 默认只有 **60 秒**，而本服务的 PDF 转换是长耗时请求（10 页 PDF 实测约 50 秒，批量转换逐个串行累加），60 秒后 Nginx 会返回 504 HTML 错误页，前端只能看到 `Unexpected token '<'`。
+
+```nginx
+server {
+    listen 80;
+    server_name pdf.yourdomain.com;
+
+    # 上传体积上限，需大于 PDF2PPTX_MAX_UPLOAD_MB
+    client_max_body_size 150M;
+    client_body_timeout  1800s;
+    client_header_timeout 60s;
+
+    location / {
+        proxy_pass http://127.0.0.1:8000;
+
+        # 转换是长耗时请求，超时必须按「批量文件数 × 单份耗时」放大
+        proxy_connect_timeout 60s;
+        proxy_read_timeout    1800s;
+        proxy_send_timeout    1800s;
+        proxy_buffering       off;
+
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+```
+
+改完执行 `nginx -t && nginx -s reload`。
+
+> **耗时参考**（2 核服务器、OCR 开启）：单份 10 页 PDF 约 50 秒；批量请求耗时 ≈ 文件数 × 单份耗时（逐个串行）。反向代理的 `proxy_read_timeout` 应大于「批量文件数 × 单份耗时」，否则会被 504 截断。
+>
+> 若前面还有 CDN（Cloudflare 等 100 秒硬超时），批量转换会被截断，此时需要改用「提交任务 + 轮询结果」的异步接口。
+
+### 5.4 批量转换本地素材
 
 ```bash
 python scripts/convert_materials.py                # 转换 tests/materials 下全部素材
@@ -150,6 +187,7 @@ python scripts/convert_materials.py --no-ocr       # 关闭 OCR（仅走结构�
 | `PDF2PPTX_OUTPUT_DIR` | `./outputs` | 转换结果目录 |
 | `PDF2PPTX_MAX_UPLOAD_MB` | `100` | 单文件体积上限（MB） |
 | `PDF2PPTX_MAX_PAGES` | `300` | 单份 PDF 页数上限 |
+| `PDF2PPTX_MAX_FILES` | `10` | 单次批量转换的文件数上限（超出直接返回 400，避免请求长挂后被代理截断） |
 | `PDF2PPTX_RETENTION_HOURS` | `6` | 上传文件与结果的保留时长（小时） |
 | `PDF2PPTX_RENDER_SCALE` | `2.0` | 复杂矢量层渲染倍率 |
 | `PDF2PPTX_KEEP_ART_LAYER` | `1` | 是否保留复杂矢量为透明图片层 |
@@ -168,6 +206,8 @@ python scripts/convert_materials.py --no-ocr       # 关闭 OCR（仅走结构�
 ### `POST /api/convert`
 
 批量上传 PDF 并转换。`multipart/form-data`，字段名 `files`，可一次传多个文件。
+
+> **请求是长耗时同步请求**：批量转换逐个串行执行，耗时 ≈ 文件数 × 单份耗时（10 页 PDF 约 50 秒）。前端会实时显示已用时。反向代理需按此放大 `proxy_read_timeout`，详见 [5.3 反向代理](#53-反向代理nginx)。单次文件数上限由 `PDF2PPTX_MAX_FILES` 控制。
 
 ```bash
 curl -X POST http://localhost:8000/api/convert \
@@ -234,7 +274,7 @@ curl -X POST http://localhost:8000/api/convert \
 │   │   ├── converter.py         # 转换编排与报告生成
 │   │   └── cleanup.py           # 过期文件清理
 │   └── static/                  # 前端页面（原生 HTML/CSS/JS）
-├── scripts/                     # 批量转换与验证工具（需自备素材，见 5.3）
+├── scripts/                     # 批量转换与验证工具（需自备素材，见 5.4）
 ├── Dockerfile
 ├── docker-compose.yml
 ├── requirements.txt
